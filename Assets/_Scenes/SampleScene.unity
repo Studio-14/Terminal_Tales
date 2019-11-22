@@ -532,7 +532,7 @@ PrefabInstance:
     - target: {fileID: 8948273900300968591, guid: 0a7f2d362aca6b04992c32080153de13,
         type: 3}
       propertyPath: m_Name
-      value: Semicolon_Placeholder
+      value: Semicolon
       objectReference: {fileID: 0}
     - target: {fileID: 3432772645593386411, guid: 0a7f2d362aca6b04992c32080153de13,
         type: 3}
