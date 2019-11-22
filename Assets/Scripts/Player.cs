@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
             movementSpeed /= 2;
         }
         
-        //Calls HandleMovement for vertical movement
+        //Calls HandleMovement for horizontal movement
         HandleMovement(horizontal);
 
         //If the player is grounded and is not currently jumping, and the jump key is pressed, then call the Jump function.
