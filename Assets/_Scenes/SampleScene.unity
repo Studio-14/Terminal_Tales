@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 604022353}
   - component: {fileID: 604022352}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ScriptHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -588,6 +588,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515247069520841633, guid: 0a7f2d362aca6b04992c32080153de13,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0143995285
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515247069520841633, guid: 0a7f2d362aca6b04992c32080153de13,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.5507927
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515247069520841633, guid: 0a7f2d362aca6b04992c32080153de13,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.004192829
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515247069520841633, guid: 0a7f2d362aca6b04992c32080153de13,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.3268223
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a7f2d362aca6b04992c32080153de13, type: 3}
