@@ -20,6 +20,13 @@ public class Player : MonoBehaviour
     {
         //Finds the RigidBody component on the player
         rb = GetComponent<Rigidbody2D>();
+
+        //TODO: Actual lives system. This forces 3 lives.
+        if (PlayerPrefsManager.getLives() <= 0)
+        {
+            PlayerPrefsManager.setLives(3);
+            PlayerPrefsManager.setHealth(100);
+        }
     }
     
     void FixedUpdate()
@@ -49,6 +56,22 @@ public class Player : MonoBehaviour
         {
             Jumping();
         }
+
+        //TODO: Lives system
+        /*
+        if (PlayerPrefsManager.getLives() <= 0)
+        {
+            
+        }
+        */
+        
+        //Once the player runs out of health, reset health and decrease lives.
+        if (PlayerPrefsManager.getHealth() <= 0)
+        {
+            PlayerPrefsManager.setHealth(100);
+            PlayerPrefsManager.decreaseLives(1);
+        }
+        
     }
 
     void HandleMovement(float horizontal)
@@ -82,5 +105,11 @@ public class Player : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
+
+    //Take damage function
+    public static void takeDamage(int amount)
+    {
+        PlayerPrefsManager.decreaseHealth(amount);
     }
 }

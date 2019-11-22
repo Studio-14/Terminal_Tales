@@ -11,6 +11,7 @@ public class DeathTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            PlayerPrefsManager.decreaseLives(1);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

@@ -14,6 +14,8 @@ public class Semicolon : MonoBehaviour
         {
             if (transform.position.y - other.GetComponent<BoxCollider2D>().transform.position.y < 0 && (other.GetComponent<Rigidbody2D>().velocity.y < 0))
             {
+                //TODO: Fix health taking from player later.
+                PlayerPrefsManager.increaseHealth(5);
                 GetComponentInParent<Enemy>().takeDamage(100);
             }
         }
