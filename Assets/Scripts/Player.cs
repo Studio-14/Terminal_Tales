@@ -21,12 +21,17 @@ public class Player : MonoBehaviour
         //Finds the RigidBody component on the player
         rb = GetComponent<Rigidbody2D>();
 
+//<<<<<<< Updated upstream
         //TODO: Actual lives system. This forces 3 lives.
         if (PlayerPrefsManager.getLives() <= 0)
         {
             PlayerPrefsManager.setLives(3);
             PlayerPrefsManager.setHealth(100);
         }
+//=======
+        isJumping = false;
+        isGrounded = true;
+//>>>>>>> Stashed changes
     }
     
     void FixedUpdate()
@@ -86,17 +91,18 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
         isGrounded = false;
         isJumping = true;
+        Debug.Log("Jumping!");
     }
     
     //If the player collides with a platform, reset their jumping status
-    private void OnCollisionEnter2D(Collision2D other)
+    /*private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Platform"))
         {
             isGrounded = true;
             isJumping = false;
         }
-    }
+    }*/
     
     //If the player leaves a platform but isn't jumping, still make sure to say they're not grounded
     private void OnCollisionExit2D(Collision2D other)
@@ -107,9 +113,19 @@ public class Player : MonoBehaviour
         }
     }
 
+//<<<<<<< Updated upstream
     //Take damage function
     public static void takeDamage(int amount)
     {
         PlayerPrefsManager.decreaseHealth(amount);
+//=======
+    }
+
+    //grounds the player
+    public void Ground()
+    {
+        isGrounded = true;
+        isJumping = false;
+//>>>>>>> Stashed changes
     }
 }
