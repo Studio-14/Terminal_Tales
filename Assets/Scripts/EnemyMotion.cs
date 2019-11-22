@@ -10,8 +10,7 @@ public class EnemyMotion : MonoBehaviour
     [SerializeField] private float movementSpeed = 2.5f;
 
     private float distance = 0;
-
-    //TODO set to correct number
+    
     private const int distancePerPlatform = 33; //Distance to move across one platform
 
     private int goalDistance;
