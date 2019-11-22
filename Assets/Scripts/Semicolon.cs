@@ -11,7 +11,7 @@ public class Semicolon : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (other.gameObject.transform.position.y >= gameObject.GetComponent<BoxCollider2D>().size.y)
+            if (transform.position.y - other.GetComponent<BoxCollider2D>().transform.position.y < 0)
             {
                 GetComponent<Enemy>().takeDamage(100);
             }
