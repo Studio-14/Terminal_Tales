@@ -9,7 +9,6 @@ public class Grounding : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Foot Trigger"))
         {
-            Debug.Log("Grounding!");
             other.GetComponentInParent<Player>().Ground();
         }
     }

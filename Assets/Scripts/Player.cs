@@ -91,19 +91,8 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
         isGrounded = false;
         isJumping = true;
-        Debug.Log("Jumping!");
     }
-    
-    //If the player collides with a platform, reset their jumping status
-    /*private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Platform"))
-        {
-            isGrounded = true;
-            isJumping = false;
-        }
-    }*/
-    
+
     //If the player leaves a platform but isn't jumping, still make sure to say they're not grounded
     private void OnCollisionExit2D(Collision2D other)
     {
