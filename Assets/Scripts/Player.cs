@@ -7,11 +7,12 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
 
+    //Serializing fields allows editing within the Unity editor without making it a public variable.
     [SerializeField]
-    private float movementSpeed;
+    private float movementSpeed = 2.5f;
 
     [SerializeField]
-    private float jumpHeight;
+    private float jumpHeight = 6f;
 
     private bool isJumping, isGrounded, isSprinting;
    
