@@ -13,7 +13,7 @@ public class Semicolon : MonoBehaviour
         {
             if (transform.position.y - other.GetComponent<BoxCollider2D>().transform.position.y < 0)
             {
-                GetComponent<Enemy>().takeDamage(100);
+                GetComponentInParent<Enemy>().takeDamage(100);
             }
         }
     }
