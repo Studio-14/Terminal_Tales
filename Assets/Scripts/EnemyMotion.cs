@@ -17,6 +17,8 @@ public class EnemyMotion : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    private SpriteRenderer sr;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,9 @@ public class EnemyMotion : MonoBehaviour
         
         //Finds the Rigidbody2d on the enemy
         rb = GetComponent<Rigidbody2D>();
+        
+        //Finds the enemy's sprite rendered
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -38,6 +43,7 @@ public class EnemyMotion : MonoBehaviour
         if (distance >= goalDistance)
         {
             movementSpeed *= -1; //Changes directions
+            sr.flipX = !sr.flipX; //Flips sprite
             distance = 0;
         }
     }
