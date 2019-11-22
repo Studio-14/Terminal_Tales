@@ -6,23 +6,18 @@ using UnityEngine;
 
 public class CanvasInfo : MonoBehaviour
 {
+    private TextMeshProUGUI[] texts;
     
-    public GameObject healthText, livesText;
-
-    private TextMeshProUGUI health, lives;
-    
-
     //Gets TextMeshPro from the game objects referenced by the canvas.
     private void Start()
     {
-        health = healthText.GetComponent<TextMeshProUGUI>();
-        lives = livesText.GetComponent<TextMeshProUGUI>();
+        texts = GetComponentsInChildren<TextMeshProUGUI>();
     }
 
     //Every frame, display the accurate count of lives and health.
     private void LateUpdate()
     {
-        health.text = "Health: " + PlayerPrefsManager.getHealth();
-        lives.text = "Lives " + PlayerPrefsManager.getLives();
+        texts[0].text = "Health: " + PlayerPrefsManager.getHealth();
+        texts[1].text = "Lives " + PlayerPrefsManager.getLives();
     }
 }

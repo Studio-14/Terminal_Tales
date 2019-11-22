@@ -1,0 +1,7 @@
+NOTE:
+These prefabs are required to make a level.
+
+When making a level:
+Drag the player GameObject on the level.
+Center the camera to the middle of the player.
+Put the death trigger somewhere below the platforms.
