@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class Semicolon : MonoBehaviour
@@ -11,7 +12,7 @@ public class Semicolon : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (transform.position.y - other.GetComponent<BoxCollider2D>().transform.position.y < 0)
+            if (transform.position.y - other.GetComponent<BoxCollider2D>().transform.position.y < 0 && (other.GetComponent<Rigidbody2D>().velocity.y < 0))
             {
                 GetComponentInParent<Enemy>().takeDamage(100);
             }
