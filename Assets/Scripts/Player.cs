@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
 //<<<<<<< Updated upstream
+                
         //TODO: Actual lives system. This forces 3 lives.
         if (PlayerPrefsManager.getLives() <= 0)
         {
@@ -75,8 +77,9 @@ public class Player : MonoBehaviour
         {
             PlayerPrefsManager.setHealth(100);
             PlayerPrefsManager.decreaseLives(1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        
+
     }
 
     void HandleMovement(float horizontal)
