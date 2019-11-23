@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class DeathTrigger : MonoBehaviour
 {
-    //If the player enters the death trigger, it reloads the scene.
+    //If the player enters the death trigger, it takes an entire life.
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerPrefsManager.decreaseLives(1);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            PlayerPrefsManager.setHealth(0);
+            other.gameObject.GetComponent<Player>().Lives();
         }
     }
 }

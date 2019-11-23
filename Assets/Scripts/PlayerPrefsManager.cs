@@ -8,6 +8,8 @@ public class PlayerPrefsManager : MonoBehaviour
 
     private const string PLAYER_LIVES = "player_lives";
 
+    private const string CURRENT_SCENE = "current_scene";
+
     //Retrieves lives from PlayerPrefs.
     public static int getLives()
     { 
@@ -56,5 +58,17 @@ public class PlayerPrefsManager : MonoBehaviour
     public static void increaseHealth(int amount)
     {
         PlayerPrefs.SetInt(PLAYER_HEALTH, getHealth() + amount);
+    }
+
+    //Get current scene from PlayerPrefs
+    public static string getScene()
+    {
+        return PlayerPrefs.GetString(CURRENT_SCENE);
+    }
+
+    //Set the scene stored in PlayerPrefs
+    public static void setScene(string sceneToSet)
+    {
+        PlayerPrefs.SetString(CURRENT_SCENE, sceneToSet);
     }
 }

@@ -21,21 +21,23 @@ public class Player : MonoBehaviour
     {
         //Finds the RigidBody component on the player
         rb = GetComponent<Rigidbody2D>();
+        
+        //Stores the active scene in PlayerPrefs in case the player dies.
+        PlayerPrefsManager.setScene(SceneManager.GetActiveScene().name);
 
 //<<<<<<< Updated upstream
-                
-        //TODO: Actual lives system. This forces 3 lives.
-        if (PlayerPrefsManager.getLives() <= 0)
-        {
-            PlayerPrefsManager.setLives(3);
-            PlayerPrefsManager.setHealth(100);
-        }
 //=======
         isJumping = false;
         isGrounded = true;
 //>>>>>>> Stashed changes
     }
-    
+
+    //Checks the lives every frame
+    private void Update()
+    {
+        Lives();
+    }
+
     void FixedUpdate()
     {
         //Floats that use the Unity input axes for movement.
@@ -63,23 +65,23 @@ public class Player : MonoBehaviour
         {
             Jumping();
         }
+    }
 
+    public void Lives()
+    {
         //TODO: Lives system
-        /*
+        //If the player runs out of lives, load the game over scene.
         if (PlayerPrefsManager.getLives() <= 0)
         {
-            
+            SceneManager.LoadScene("GameOver");
         }
-        */
-        
         //Once the player runs out of health, reset health and decrease lives.
-        if (PlayerPrefsManager.getHealth() <= 0)
+        else if (PlayerPrefsManager.getHealth() <= 0 && PlayerPrefsManager.getLives() > 0)
         {
-            PlayerPrefsManager.setHealth(100);
             PlayerPrefsManager.decreaseLives(1);
+            PlayerPrefsManager.setHealth(100);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-
     }
 
     void HandleMovement(float horizontal)
