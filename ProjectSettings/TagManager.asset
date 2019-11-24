@@ -7,7 +7,6 @@ TagManager:
   - Platform
   - Foot Trigger
   - Semicolon Head Trigger
-  - Pause Menu
   layers:
   - Default
   - TransparentFX
