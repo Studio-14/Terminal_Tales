@@ -18,4 +18,10 @@ public class PlayButton : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Cursor.visible = false;
     }
+
+    //Quits game when Exit is pressed
+    public void QuitButton()
+    {
+        Application.Quit();
+    }
 }
