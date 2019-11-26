@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,27 +16,60 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float jumpHeight = 6f;
 
+    //Gets sprite renderer from player object.
+    private SpriteRenderer sr;
+
     private bool isJumping, isGrounded, isSprinting;
+    
+    //Colors for the player's injury status
+    private Color normal = new Color(0, 255, 0);
+    private Color hurt = new Color(255, 0, 0);
+
+    //Timer for resetting the player's color.
+    private float hurtTimer;
+
+    //Boolean that determines the injury status.
+    public static bool isHurt;
    
     void Start()
     {
         //Finds the RigidBody component on the player
         rb = GetComponent<Rigidbody2D>();
+
+        //Finds the SpriteRenderer component on the player
+        sr = GetComponent<SpriteRenderer>();
         
         //Stores the active scene in PlayerPrefs in case the player dies.
         PlayerPrefsManager.setScene(SceneManager.GetActiveScene().name);
-
-//<<<<<<< Updated upstream
-//=======
+        
         isJumping = false;
         isGrounded = true;
-//>>>>>>> Stashed changes
     }
 
     //Checks the lives every frame
     private void Update()
     {
         Lives();
+
+        //If the isHurt boolean is true
+        if (isHurt)
+        {
+            //Start counting the hurtTimer by real time.
+            hurtTimer += Time.deltaTime;
+            //Set the player's color to hurt.
+            sr.color = hurt;
+
+            //Once the timer is up
+            if (hurtTimer >= 0.5f)
+            {
+                //Change the boolean back to false
+                isHurt = false;
+                //Set the color back to normal
+                sr.color = normal;
+                //Reset the hurt timer for when it is called again.
+                hurtTimer = 0;
+            }
+        }
     }
 
     void FixedUpdate()
@@ -107,13 +141,13 @@ public class Player : MonoBehaviour
             isGrounded = false;
         }
     }
-
-//<<<<<<< Updated upstream
+    
     //Take damage function
     public static void takeDamage(int amount)
     {
         PlayerPrefsManager.decreaseHealth(amount);
-//=======
+        //Sets the hurt boolean to true for changing the player's color.
+        isHurt = true;
     }
 
     //grounds the player
@@ -121,6 +155,5 @@ public class Player : MonoBehaviour
     {
         isGrounded = true;
         isJumping = false;
-//>>>>>>> Stashed changes
     }
 }

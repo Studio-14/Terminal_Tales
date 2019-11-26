@@ -11,6 +11,9 @@ public class Enemy : MonoBehaviour
 
     public int amountOfDamage = 5;
 
+    //Boolean that determines if the player should lose health.
+    public bool canTakeDamage = true;
+
     //Checks if the enemy is dead. If so, destroy the game object.
     private void Update()
     {
@@ -29,7 +32,7 @@ public class Enemy : MonoBehaviour
     //If a player enters the trigger, take damage
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && canTakeDamage)
         {
             Player.takeDamage(amountOfDamage);
         }
