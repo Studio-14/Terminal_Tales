@@ -11,6 +11,7 @@ public class Retry : MonoBehaviour
     {
         PlayerPrefsManager.setLives(3);
         PlayerPrefsManager.setHealth(100);
+        Cursor.visible = false;
         SceneManager.LoadScene(PlayerPrefsManager.getScene());
     }
 }

@@ -33,6 +33,7 @@ public class PauseMenu : MonoBehaviour
             canvasGroup.alpha = 1;
             canvasGroup.interactable = true;
             isPaused = true;
+            Cursor.visible = true;
             AudioListener.volume = 0;
         }
         //If the alpha of the group is 1 (or enabled), disable the pause menu and reenable gameplay.
@@ -41,6 +42,7 @@ public class PauseMenu : MonoBehaviour
             canvasGroup.alpha = 0;
             canvasGroup.interactable = false;
             isPaused = false;
+            Cursor.visible = false;
             AudioListener.volume = 1;
         }
 

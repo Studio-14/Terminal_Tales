@@ -16,5 +16,6 @@ public class PlayButton : MonoBehaviour
         }
         //TODO: Add tutorial and load if necessary
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Cursor.visible = false;
     }
 }

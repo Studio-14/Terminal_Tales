@@ -73,6 +73,7 @@ public class Player : MonoBehaviour
         //If the player runs out of lives, load the game over scene.
         if (PlayerPrefsManager.getLives() <= 0)
         {
+            Cursor.visible = true;
             SceneManager.LoadScene("GameOver");
         }
         //Once the player runs out of health, reset health and decrease lives.
