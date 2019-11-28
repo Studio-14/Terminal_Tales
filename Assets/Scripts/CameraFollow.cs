@@ -13,7 +13,6 @@ public class CameraFollow : MonoBehaviour
         //Find a player in the scene
         player = FindObjectOfType<Player>();
         //Offset the camera between the player and the camera
-        //offset = transform.position - player.transform.position;
         offset = new Vector3(0, 0, -9);
     }
 

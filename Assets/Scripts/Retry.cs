@@ -8,7 +8,7 @@ public class Retry : MonoBehaviour
     
     private Vector3 resetPos = new Vector3(0, 0, -1);
 
-    //When the retry button is clicked, go to the last level but with full health
+    //When the retry button is clicked, go to the last level but with full health and back at the beginning
     public void ButtonClick()
     {
         PlayerPrefsManager.setLives(3);

@@ -68,6 +68,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         isPaused = false;
+        //Saves and sends the player's location to PlayerPrefs.
         PlayerPrefsManager.setLocation(player.transform.position);
         SceneManager.LoadScene("0_Title");
     }
@@ -75,6 +76,7 @@ public class PauseMenu : MonoBehaviour
     //If the player wishes to quit the game, force quit the game.
     public void ExitGame()
     {
+        //Saves and sends the player's location to PlayerPrefs.
         PlayerPrefsManager.setLocation(player.transform.position);
         Application.Quit();
     }

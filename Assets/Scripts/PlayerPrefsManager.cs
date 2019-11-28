@@ -80,6 +80,7 @@ public class PlayerPrefsManager : MonoBehaviour
         PlayerPrefs.SetString(CURRENT_SCENE, sceneToSet);
     }
 
+    //Gets the x, y, z coordinates of the player in PlayerPrefs and returns them as a Vector3.
     public static Vector3 getLocation()
     {
         float x = PlayerPrefs.GetFloat(PLAYER_X);
@@ -89,6 +90,7 @@ public class PlayerPrefsManager : MonoBehaviour
         return loc;
     }
 
+    //Sets the location in PlayerPrefs.
     public static void setLocation(Vector3 loc)
     {
         PlayerPrefs.SetFloat(PLAYER_X, loc.x);
