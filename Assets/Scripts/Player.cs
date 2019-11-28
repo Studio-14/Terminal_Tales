@@ -30,9 +30,10 @@ public class Player : MonoBehaviour
 
     //Boolean that determines the injury status.
     public static bool isHurt;
-   
+
     void Start()
     {
+        transform.position = PlayerPrefsManager.getLocation();
         //Finds the RigidBody component on the player
         rb = GetComponent<Rigidbody2D>();
 
