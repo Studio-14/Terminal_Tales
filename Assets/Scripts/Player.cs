@@ -33,9 +33,9 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        //Gets the location from PlayerPrefsManager for saves.
+        //Gets the location from PlayerPrefsManager for saves. Ignores the z position and forces the player to always be on top.
         //TODO: Maybe only manually set the position if it isn't 0,0,0 and reset the position when completing a level.
-        transform.position = PlayerPrefsManager.getLocation();
+        transform.position = new Vector3(PlayerPrefsManager.getLocation().x, PlayerPrefsManager.getLocation().y, -1f);
         //Finds the RigidBody component on the player
         rb = GetComponent<Rigidbody2D>();
 
