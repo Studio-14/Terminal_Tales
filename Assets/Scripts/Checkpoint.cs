@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    private Color32 exitColor = new Color32(240, 179, 35, 255);
+    private Color32 exitColor = new Color32(0, 150, 0, 255);
 
     private SpriteRenderer sr;
 
