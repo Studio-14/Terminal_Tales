@@ -13,6 +13,8 @@ public class PlayButton : MonoBehaviour
         {
             PlayerPrefsManager.setLives(3);
             PlayerPrefsManager.setHealth(100);
+            //TODO: Load proper player location.
+            PlayerPrefsManager.setLocation(new Vector3(0, 0, -1));
         }
         //TODO: Add tutorial and load if necessary
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

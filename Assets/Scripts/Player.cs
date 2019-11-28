@@ -30,9 +30,12 @@ public class Player : MonoBehaviour
 
     //Boolean that determines the injury status.
     public static bool isHurt;
-   
+
     void Start()
     {
+        //Gets the location from PlayerPrefsManager for saves.
+        //TODO: Maybe only manually set the position if it isn't 0,0,0 and reset the position when completing a level.
+        transform.position = PlayerPrefsManager.getLocation();
         //Finds the RigidBody component on the player
         rb = GetComponent<Rigidbody2D>();
 

@@ -13,9 +13,9 @@ public class CameraFollow : MonoBehaviour
         //Find a player in the scene
         player = FindObjectOfType<Player>();
         //Offset the camera between the player and the camera
-        offset = transform.position - player.gameObject.transform.position;
+        offset = new Vector3(0, 0, -9);
     }
-    
+
     //LateUpdate() is ran after all other updates, such as Update() and FixedUpdate()
     void LateUpdate()
     {

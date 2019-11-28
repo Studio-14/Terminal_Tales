@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 public class PlayerPrefsManager : MonoBehaviour
 {
@@ -9,6 +11,12 @@ public class PlayerPrefsManager : MonoBehaviour
     private const string PLAYER_LIVES = "player_lives";
 
     private const string CURRENT_SCENE = "current_scene";
+
+    private const string PLAYER_X = "player_x";
+
+    private const string PLAYER_Y = "player_y";
+
+    private const string PLAYER_Z = "player_z";
 
     //Retrieves lives from PlayerPrefs.
     public static int getLives()
@@ -70,5 +78,23 @@ public class PlayerPrefsManager : MonoBehaviour
     public static void setScene(string sceneToSet)
     {
         PlayerPrefs.SetString(CURRENT_SCENE, sceneToSet);
+    }
+
+    //Gets the x, y, z coordinates of the player in PlayerPrefs and returns them as a Vector3.
+    public static Vector3 getLocation()
+    {
+        float x = PlayerPrefs.GetFloat(PLAYER_X);
+        float y = PlayerPrefs.GetFloat(PLAYER_Y);
+        float z = PlayerPrefs.GetFloat(PLAYER_Z);
+        Vector3 loc = new Vector3(x,y, z);
+        return loc;
+    }
+
+    //Sets the location in PlayerPrefs.
+    public static void setLocation(Vector3 loc)
+    {
+        PlayerPrefs.SetFloat(PLAYER_X, loc.x);
+        PlayerPrefs.SetFloat(PLAYER_Y, loc.y);
+        PlayerPrefs.SetFloat(PLAYER_Z, loc.z);
     }
 }

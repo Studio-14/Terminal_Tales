@@ -9,10 +9,15 @@ public class PauseMenu : MonoBehaviour
     private CanvasGroup canvasGroup;
     private bool isPaused;
 
+    private Player player;
+
+    private Vector3 playerPos;
+
     private void Start()
     {
         //Gets the canvas group component.
         canvasGroup = GetComponent<CanvasGroup>();
+        player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
@@ -63,12 +68,16 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         isPaused = false;
+        //Saves and sends the player's location to PlayerPrefs.
+        PlayerPrefsManager.setLocation(player.transform.position);
         SceneManager.LoadScene("0_Title");
     }
 
     //If the player wishes to quit the game, force quit the game.
     public void ExitGame()
     {
+        //Saves and sends the player's location to PlayerPrefs.
+        PlayerPrefsManager.setLocation(player.transform.position);
         Application.Quit();
     }
 }
