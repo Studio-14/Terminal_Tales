@@ -5,6 +5,14 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
+    private Color32 exitColor = new Color32(240, 179, 35, 255);
+
+    private SpriteRenderer sr;
+
+    private void Start()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
 
     //When entering the trigger, save the player's location to PlayerPrefs.
     private void OnTriggerEnter2D(Collider2D other)
@@ -12,7 +20,7 @@ public class Checkpoint : MonoBehaviour
         if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Foot Trigger"))
         {
             PlayerPrefsManager.setLocation(transform.position);
-            gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
+            sr.color = Color.cyan;
         }
     }
 
@@ -22,7 +30,7 @@ public class Checkpoint : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Foot Trigger"))
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+            sr.color = exitColor;
         }
     }
 }
