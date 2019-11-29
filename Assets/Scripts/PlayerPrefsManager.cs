@@ -66,6 +66,12 @@ public class PlayerPrefsManager : MonoBehaviour
     public static void increaseHealth(int amount)
     {
         PlayerPrefs.SetInt(PLAYER_HEALTH, getHealth() + amount);
+        
+        //prevents player health from exceeding 100
+        if (PlayerPrefs.GetInt(PLAYER_HEALTH) > 100)
+        {
+            setHealth(100);
+        }
     }
 
     //Get current scene from PlayerPrefs
