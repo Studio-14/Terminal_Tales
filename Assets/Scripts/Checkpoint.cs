@@ -33,16 +33,6 @@ public class Checkpoint : MonoBehaviour
         }
     }
 
-    //When exiting, change the color back to blue.
-    //TODO: See if we should keep the changing colors.
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Foot Trigger"))
-        {
-            //sr.color = inactiveColor; Do we actually want to change the color back?
-        }
-    }
-    
     //Resets the checkpoint's color
     public void ResetColor()
     {
