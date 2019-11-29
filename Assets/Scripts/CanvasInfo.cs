@@ -7,7 +7,13 @@ using UnityEngine;
 public class CanvasInfo : MonoBehaviour
 {
     private TextMeshProUGUI[] texts;
-    private Color good = new Color(0, 200, 0), medium = new Color(255, 255, 0), bad = new Color(255, 0, 0);
+    private Color good = new Color(0, 200, 0), medium = new Color(255, 255, 0), bad = new Color(255, 0, 0), black = Color.black;
+
+    //Private timer for when the health flashes
+    private float flashTimer;
+
+    //How long the flash should last.
+    public float flashDelay = 0.25f;
     
     //Gets TextMeshPro from the game objects referenced by the canvas.
     private void Start()
@@ -27,9 +33,14 @@ public class CanvasInfo : MonoBehaviour
         {
             texts[0].color = medium;
         }
-        else
+        else if (PlayerPrefsManager.getHealth() > 10 && PlayerPrefsManager.getHealth() <= 25)
         {
             texts[0].color = bad;
+        }
+        else
+        {
+            //Flash the health because it's critically low
+            CriticalHealth();
         }
 
         if (PlayerPrefsManager.getLives() >= 3)
@@ -46,5 +57,18 @@ public class CanvasInfo : MonoBehaviour
         }
         texts[0].text = "Health: " + PlayerPrefsManager.getHealth();
         texts[1].text = "Lives: " + PlayerPrefsManager.getLives();
+    }
+
+    void CriticalHealth()
+    {
+        //Increase the health by real time.
+        flashTimer += Time.deltaTime;
+
+        //Set the color of the health text based off the previous color.
+        if (flashTimer >= flashDelay)
+        {
+            texts[0].color = texts[0].color == bad ? black : bad;
+            flashTimer = 0f;
+        }
     }
 }
