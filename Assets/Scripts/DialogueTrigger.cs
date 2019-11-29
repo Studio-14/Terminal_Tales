@@ -10,18 +10,56 @@ public class DialogueTrigger : MonoBehaviour
 
     public string dialogue;
 
+    private string dialogueBuild;
+
+    private float dialogueTimer;
+
+    private int dialogueLength;
+
+    private int i;
+
+    private bool shouldType;
+
     private void Start()
     {
         //Finds the dialogue text.
         text = GameObject.FindWithTag("Dialogue").GetComponent<TextMeshProUGUI>();
+        dialogueLength = dialogue.Length;
+    }
+
+    private void Update()
+    {
+        //To save resources, the dialogue timer should only run when the boolean is true.
+        if (shouldType)
+        {
+            dialogueTimer += Time.deltaTime;
+        }
+
+        //Once triggered by the platform, start the typing effect by adding one letter at a time to another string
+        //and displaying the work in progress string.
+        if (shouldType && dialogueTimer >= 0.1f && i < dialogueLength)
+        {
+            dialogueBuild += dialogue[i];
+            i++;
+            dialogueTimer = 0f;
+            text.text = dialogueBuild;
+        }
+
+        //Once the player leaves the platform, reset everything for the next platform.
+        if (!shouldType && dialogueBuild != "")
+        {
+            dialogueBuild = "";
+            i = 0;
+            text.text = "";
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //If the object that triggered the trigger is the player, show the dialogue text.
+        //If the object that triggered the trigger is the player, start "typing" the dialogue text.
         if (other.gameObject.CompareTag("Foot Trigger") || other.gameObject.CompareTag("Player"))
         {
-            text.text = dialogue;
+            shouldType = true;
         }
     }
 
@@ -30,7 +68,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Foot Trigger") || other.gameObject.CompareTag("Player"))
         {
-            text.text = "";
+            shouldType = false;
         }
     }
 }
