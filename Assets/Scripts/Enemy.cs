@@ -11,9 +11,19 @@ public class Enemy : MonoBehaviour
 
     public int amountOfDamage = 5;
 
+    private float hurtTimer;
+    private bool isHurt = false;
+    
     //Boolean that determines if the player should lose health.
     public bool canTakeDamage = true;
 
+    private SpriteRenderer sr;
+
+    private void Start()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
+    
     //Checks if the enemy is dead. If so, destroy the game object.
     private void Update()
     {
@@ -21,12 +31,29 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (isHurt)
+        {
+            hurtTimer += Time.deltaTime;
+
+            sr.enabled = !sr.enabled;
+
+            if (hurtTimer >= 0.5f)
+            {
+                sr.enabled = true;
+                
+                isHurt = false;
+
+                hurtTimer = 0;
+            }
+        }
     }
 
     //Take damage function
     public void takeDamage(int damageToTake)
     {
         health -= damageToTake;
+        isHurt = true;
     }
 
     //If a player enters the trigger, take damage
