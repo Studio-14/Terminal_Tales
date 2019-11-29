@@ -31,6 +31,12 @@ public class Player : MonoBehaviour
     //Boolean that determines the injury status.
     public static bool isHurt;
 
+    //Sound that plays when jumping
+    public AudioClip jumpSound;
+
+    //AudioSource component on player
+    private AudioSource audioSource;
+
     void Start()
     {
         //Gets the location from PlayerPrefsManager for saves. Ignores the z position and forces the player to always be on top.
@@ -47,6 +53,9 @@ public class Player : MonoBehaviour
         
         isJumping = false;
         isGrounded = true;
+
+        //Gets AudioSource component
+        audioSource = GetComponent<AudioSource>();
     }
 
     //Checks the lives every frame
@@ -130,6 +139,9 @@ public class Player : MonoBehaviour
 
     void Jumping()
     {
+        //Sets the audioSource clip to the jump sound and plays the jump sound.
+        audioSource.clip = jumpSound;
+        audioSource.Play();
         //Jumps the player up and sets booleans
         rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
         isGrounded = false;
