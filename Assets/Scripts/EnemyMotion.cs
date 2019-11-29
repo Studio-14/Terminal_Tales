@@ -9,11 +9,11 @@ public class EnemyMotion : MonoBehaviour
 
     [SerializeField] private float movementSpeed = 2.5f;
 
-    private float distance = 0;
-    
-    private const int distancePerPlatform = 33; //Distance to move across one platform
+    private const float distancePerPlatform = 0.65f; //Distance to move across one platform old:0.6
 
-    private int goalDistance;
+    private double goalTime;
+
+    private float moveTimer;
 
     private Rigidbody2D rb;
 
@@ -25,8 +25,8 @@ public class EnemyMotion : MonoBehaviour
         //Makes the enemy move to the left
         movementSpeed *= -1;
         
-        //Sets goalDistance
-        setGoalDistance();
+        //Sets goalTime
+        setGoalTime();
         
         //Finds the Rigidbody2d on the enemy
         rb = GetComponent<Rigidbody2D>();
@@ -38,19 +38,24 @@ public class EnemyMotion : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        moveTimer += Time.deltaTime;
+        
         rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
-        distance++;
-        if (distance >= goalDistance)
+        if (moveTimer >= goalTime)
         {
             movementSpeed *= -1; //Changes directions
             sr.flipX = !sr.flipX; //Flips sprite
-            distance = 0;
+            moveTimer = 0;
         }
     }
 
-    // Sets goalDistance
-    void setGoalDistance()
+    // Sets goalTime
+    void setGoalTime()
     {
-        goalDistance = distancePerPlatform * platformSize;
+        goalTime = distancePerPlatform * platformSize * (2.5 / movementSpeed);
+        if (goalTime < 0)
+        {
+            goalTime *= -1;
+        }
     }
 }
