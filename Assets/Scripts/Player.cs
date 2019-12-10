@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
         
         isJumping = false;
         isGrounded = true;
+        isSprinting = false;
 
         //Gets AudioSource component
         audioSource = GetComponent<AudioSource>();
