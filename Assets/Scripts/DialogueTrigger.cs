@@ -24,7 +24,6 @@ public class DialogueTrigger : MonoBehaviour
     {
         //Finds the dialogue text.
         text = GameObject.FindWithTag("Dialogue").GetComponent<TextMeshProUGUI>();
-        dialogueLength = dialogue.Length;
     }
 
     private void Update()
@@ -37,7 +36,7 @@ public class DialogueTrigger : MonoBehaviour
 
         //Once triggered by the platform, start the typing effect by adding one letter at a time to another string
         //and displaying the work in progress string.
-        if (shouldType && dialogueTimer >= 0.1f && i < dialogueLength)
+        if (shouldType && dialogueTimer >= 0.075f && i < dialogueLength)
         {
             dialogueBuild += dialogue[i];
             i++;
@@ -60,6 +59,8 @@ public class DialogueTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Foot Trigger") || other.gameObject.CompareTag("Player"))
         {
             shouldType = true;
+            //Sets the length here in case the text is changed during game play.
+            dialogueLength = dialogue.Length;
         }
     }
 
