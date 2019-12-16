@@ -9,7 +9,7 @@ public class EnemyMotion : MonoBehaviour
 
     [SerializeField] private float movementSpeed = 2.5f;
 
-    [SerializeField] private float distancePerPlatform = 0.65f; //Depends on the enemy type.
+    private const float distancePerPlatform = 0.75f; //Depends on the enemy type.
 
     private double goalTime;
 

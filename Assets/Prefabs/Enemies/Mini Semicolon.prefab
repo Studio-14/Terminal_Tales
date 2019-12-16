@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformSize: 1
   movementSpeed: 3
-  distancePerPlatform: 2.27
+  distancePerPlatform: 0.76
 --- !u!50 &761384176095261117
 Rigidbody2D:
   serializedVersion: 4
