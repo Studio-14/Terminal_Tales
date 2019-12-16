@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 6380625033541107459, guid: 69c8b612231191e488a0b901ea84e7c0,
         type: 3}
       propertyPath: m_Name
-      value: Platform
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 6380625033541107457, guid: 69c8b612231191e488a0b901ea84e7c0,
         type: 3}
