@@ -39,18 +39,25 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        //Gets the location from PlayerPrefsManager for saves. Ignores the z position and forces the player to always be on top.
-        //TODO: Maybe only manually set the position if it isn't 0,0,0 and reset the position when completing a level.
-        transform.position = new Vector3(PlayerPrefsManager.getLocation().x, PlayerPrefsManager.getLocation().y, -1f);
+        //Sets the start position to what's in PlayerPrefs only if the scenes match.
+        if (PlayerPrefsManager.getScene() == SceneManager.GetActiveScene().name)
+        {
+            //Gets the location from PlayerPrefsManager for saves. Ignores the z position and forces the player to always be on top.
+            //TODO: Maybe only manually set the position if it isn't 0,0,0 
+            transform.position = new Vector3(PlayerPrefsManager.getLocation().x, PlayerPrefsManager.getLocation().y, -1f);
+        }
+        else
+        {
+            //Stores the active scene in PlayerPrefs in case the player dies.
+            PlayerPrefsManager.setScene(SceneManager.GetActiveScene().name);
+            PlayerPrefsManager.setLocation(transform.position);
+        }
         //Finds the RigidBody component on the player
         rb = GetComponent<Rigidbody2D>();
 
         //Finds the SpriteRenderer component on the player
         sr = GetComponent<SpriteRenderer>();
-        
-        //Stores the active scene in PlayerPrefs in case the player dies.
-        PlayerPrefsManager.setScene(SceneManager.GetActiveScene().name);
-        
+
         isJumping = false;
         isGrounded = true;
         isSprinting = false;
