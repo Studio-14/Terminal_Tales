@@ -26,7 +26,7 @@ public class InventoryManager : MonoBehaviour
 
         for (int i = 0; i < NumItems; i++)
         {
-            inventory[i] = (savedData[i] == '1') ? true : false;
+            inventory[i] = (savedData[i] == '1');
         }
     }
     

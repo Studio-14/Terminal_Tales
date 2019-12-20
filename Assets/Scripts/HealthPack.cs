@@ -12,7 +12,7 @@ public class HealthPack : MonoBehaviour
     //activate the health pack
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (canHeal)
+        if (canHeal && other.tag == "Player")
         {
             PlayerPrefsManager.increaseHealth(amountOfHealth);
             canHeal = false;
