@@ -57,6 +57,7 @@ public class CanvasInfo : MonoBehaviour
         }
         texts[0].text = "Health: " + PlayerPrefsManager.getHealth();
         texts[1].text = "Lives: " + PlayerPrefsManager.getLives();
+        texts[2].text = "Inventory: " + PlayerPrefs.GetString("inventory");
     }
 
     void CriticalHealth()

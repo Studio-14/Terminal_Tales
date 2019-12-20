@@ -13,6 +13,7 @@ public class Retry : MonoBehaviour
     {
         PlayerPrefsManager.setLives(3);
         PlayerPrefsManager.setHealth(100);
+        InventoryManager.ResetInventory();
         Cursor.visible = false;
         //TODO: Set a proper location based off a level instead of forcing 0, 0, -1.
         PlayerPrefsManager.setLocation(resetPos);

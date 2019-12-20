@@ -29,6 +29,12 @@ public class Enemy : MonoBehaviour
     {
         if (health <= 0)
         {
+            DropItem[] di = GetComponents<DropItem>();
+            for (int i = 0; i < di.Length; i++)
+            {
+                di[i].Drop();
+            }
+            
             Destroy(gameObject);
         }
 
