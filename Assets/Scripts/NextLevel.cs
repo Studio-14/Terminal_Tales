@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class NextLevel : MonoBehaviour
 {
-
-    [SerializeField]
-    private float newX, newY, newZ;
+    
+    public float newX, newY, newZ;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
