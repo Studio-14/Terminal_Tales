@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using JetBrains.Annotations;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
@@ -17,6 +18,8 @@ public class PlayerPrefsManager : MonoBehaviour
     private const string PLAYER_Y = "player_y";
 
     private const string PLAYER_Z = "player_z";
+
+    private const string INVENTORY = "inventory";
 
     //Retrieves lives from PlayerPrefs.
     public static int getLives()
@@ -102,5 +105,15 @@ public class PlayerPrefsManager : MonoBehaviour
         PlayerPrefs.SetFloat(PLAYER_X, loc.x);
         PlayerPrefs.SetFloat(PLAYER_Y, loc.y);
         PlayerPrefs.SetFloat(PLAYER_Z, loc.z);
+    }
+
+    public static string getInventory()
+    {
+        return PlayerPrefs.GetString(INVENTORY);
+    }
+
+    public static void setInventory(string savedData)
+    {
+        PlayerPrefs.SetString(INVENTORY, savedData);
     }
 }

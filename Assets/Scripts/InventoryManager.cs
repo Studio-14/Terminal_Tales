@@ -41,7 +41,7 @@ public class InventoryManager : MonoBehaviour
             savedData += latestChar;
         } 
         
-        PlayerPrefs.SetString("inventory", savedData);
+        PlayerPrefsManager.setInventory(savedData);
     }
 
     // Start is called before the first frame update
@@ -50,7 +50,7 @@ public class InventoryManager : MonoBehaviour
 
         if (PlayerPrefs.HasKey("inventory"))
         {
-            string savedData = PlayerPrefs.GetString("inventory");
+            string savedData = PlayerPrefsManager.getInventory();
             DecodeInventory(savedData);
         }
         else
