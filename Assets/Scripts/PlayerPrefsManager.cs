@@ -95,7 +95,7 @@ public class PlayerPrefsManager : MonoBehaviour
         float x = PlayerPrefs.GetFloat(PLAYER_X);
         float y = PlayerPrefs.GetFloat(PLAYER_Y);
         float z = PlayerPrefs.GetFloat(PLAYER_Z);
-        Vector3 loc = new Vector3(x,y, z);
+        Vector3 loc = new Vector3(x, y, z);
         return loc;
     }
 
