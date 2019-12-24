@@ -30,6 +30,9 @@ public class Player : MonoBehaviour
 
     //Boolean that determines the injury status.
     public static bool isHurt;
+    
+    //Boolean to use for starting position.
+    public static bool isStarting;
 
     //Sound that plays when jumping
     public AudioClip jumpSound;
@@ -39,11 +42,17 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        //If the isStarting boolean is true, then set the start position to the object found.
+        if (isStarting)
+        {
+            isStarting = false;
+            StartPlatform startPlatform = FindObjectOfType<StartPlatform>();
+            startPlatform.location();
+        }
         //Sets the start position to what's in PlayerPrefs only if the scenes match.
         if (PlayerPrefsManager.getScene() == SceneManager.GetActiveScene().name)
         {
             //Gets the location from PlayerPrefsManager for saves. Ignores the z position and forces the player to always be on top.
-            //TODO: Maybe only manually set the position if it isn't 0,0,0 
             transform.position = new Vector3(PlayerPrefsManager.getLocation().x, PlayerPrefsManager.getLocation().y, -1f);
         }
         else
@@ -123,7 +132,6 @@ public class Player : MonoBehaviour
 
     public void Lives()
     {
-        //TODO: Lives system
         //If the player runs out of lives, load the game over scene.
         if (PlayerPrefsManager.getLives() <= 0)
         {

@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Retry : MonoBehaviour
 {
-    
-    private Vector3 resetPos = new Vector3(0, 0, -1);
-
     //When the retry button is clicked, go to the last level but with full health and back at the beginning
     public void ButtonClick()
     {
@@ -15,8 +12,7 @@ public class Retry : MonoBehaviour
         PlayerPrefsManager.setHealth(100);
         InventoryManager.ResetInventory();
         Cursor.visible = false;
-        //TODO: Set a proper location based off a level instead of forcing 0, 0, -1.
-        PlayerPrefsManager.setLocation(resetPos);
+        Player.isStarting = true;
         SceneManager.LoadScene(PlayerPrefsManager.getScene());
     }
 }
