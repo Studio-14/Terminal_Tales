@@ -36,7 +36,7 @@ public class Settings : MonoBehaviour
         //For loop that adds the resolutions as a string to a list as a string that the dropdown can use
         for (int i = 0; i < resolutions.Length; i++)
         {
-            string option = resolutions[i].width + " x " + resolutions[i].height;
+            string option = resolutions[i].width + "x" + resolutions[i].height;
             options.Add(option);
 
             if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
