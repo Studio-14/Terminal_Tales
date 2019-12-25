@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PlayButton : MonoBehaviour
 {
@@ -18,6 +19,12 @@ public class PlayButton : MonoBehaviour
         //TODO: Add tutorial and load if necessary
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Cursor.visible = false;
+    }
+
+    //Loads settings scene
+    public void SettingsButton()
+    {
+        SceneManager.LoadScene("Settings");
     }
 
     //Quits game when Exit is pressed

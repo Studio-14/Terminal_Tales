@@ -21,6 +21,8 @@ public class PlayerPrefsManager : MonoBehaviour
 
     private const string INVENTORY = "inventory";
 
+    private const string VOLUME = "volume";
+
     //Retrieves lives from PlayerPrefs.
     public static int getLives()
     { 
@@ -115,5 +117,17 @@ public class PlayerPrefsManager : MonoBehaviour
     public static void setInventory(string savedData)
     {
         PlayerPrefs.SetString(INVENTORY, savedData);
+    }
+
+    //Retrieves volume level from PlayerPrefs
+    public static float getVolume()
+    {
+        return PlayerPrefs.GetFloat(VOLUME);
+    }
+
+    //Sets volume level in PlayerPrefs
+    public static void setVolume(float volume)
+    {
+        PlayerPrefs.SetFloat(VOLUME, volume);
     }
 }
