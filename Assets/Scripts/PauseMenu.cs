@@ -76,7 +76,6 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         isPaused = false;
-        music.GetComponent<AudioSource>().Play();
         SceneManager.LoadScene("0_Title");
     }
 
