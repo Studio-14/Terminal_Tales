@@ -12,12 +12,14 @@ public class PauseMenu : MonoBehaviour
     private Player player;
 
     private Vector3 playerPos;
+    private Music music;
 
     private void Start()
     {
         //Gets the canvas group component.
         canvasGroup = GetComponent<CanvasGroup>();
         player = FindObjectOfType<Player>();
+        music = FindObjectOfType<Music>();
     }
 
     // Update is called once per frame
@@ -40,6 +42,7 @@ public class PauseMenu : MonoBehaviour
             isPaused = true;
             Cursor.visible = true;
             AudioListener.volume = 0;
+            music.GetComponent<AudioSource>().Pause();
         }
         //If the alpha of the group is 1 (or enabled), disable the pause menu and reenable gameplay.
         else if (canvasGroup.alpha >= 1)
@@ -49,6 +52,7 @@ public class PauseMenu : MonoBehaviour
             isPaused = false;
             Cursor.visible = false;
             AudioListener.volume = 1;
+            music.GetComponent<AudioSource>().Play();
         }
 
         //If the game is paused, disable time.
