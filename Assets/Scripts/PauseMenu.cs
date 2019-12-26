@@ -20,10 +20,16 @@ public class PauseMenu : MonoBehaviour
         canvasGroup = GetComponent<CanvasGroup>();
         player = FindObjectOfType<Player>();
         music = FindObjectOfType<Music>();
+
+        //Ensures that audio continues to work when changing scenes while paused.
+        if (!isPaused && canvasGroup.alpha <= 0)
+        {
+            changeMenu(1, 1, 0, false);
+        }
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         //If the player presses escape, the game pauses or resumes
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -34,37 +40,35 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
-        //If the alpha of the group is 0 (or disabled), enable the pause menu and disable gameplay.
-        if (canvasGroup.alpha <= 0)
-        {
-            canvasGroup.alpha = 1;
-            canvasGroup.interactable = true;
-            isPaused = true;
-            Cursor.visible = true;
-            AudioListener.volume = 0;
-            music.GetComponent<AudioSource>().Pause();
-        }
-        //If the alpha of the group is 1 (or enabled), disable the pause menu and reenable gameplay.
-        else if (canvasGroup.alpha >= 1)
-        {
-            canvasGroup.alpha = 0;
-            canvasGroup.interactable = false;
-            isPaused = false;
-            Cursor.visible = false;
-            AudioListener.volume = 1;
-            music.GetComponent<AudioSource>().Play();
-        }
+        //Sets the isPaused variable based on the visibility of the pause menu.
+        isPaused = canvasGroup.alpha <= 0;
 
         //If the game is paused, disable time.
         if (isPaused)
         {
-            Time.timeScale = 0;
+            changeMenu(0, 0, 1, true);
         }
         //If the game is not paused, keep time running.
         else if (!isPaused)
         {
-            Time.timeScale = 1;
+            changeMenu(1, 1, 0, false);
         }
+    }
+
+    //Function that sets values of variables based on how it was called.
+    private void changeMenu(int volume, int timeScale, int alpha, bool bools)
+    {
+        AudioListener.volume = volume;
+        Time.timeScale = timeScale;
+        canvasGroup.alpha = alpha;
+        canvasGroup.interactable = bools;
+        isPaused = bools;
+        Cursor.visible = bools;
+
+        if (bools)
+            music.GetComponent<AudioSource>().Pause();
+        else
+            music.GetComponent<AudioSource>().Play();
     }
 
     //If the player wishes to go back to the main menu, reenable time and go to the main menu scene.
@@ -72,6 +76,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         isPaused = false;
+        music.GetComponent<AudioSource>().Play();
         SceneManager.LoadScene("0_Title");
     }
 
