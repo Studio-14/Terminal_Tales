@@ -15,11 +15,14 @@ public class CutsceneDialogue : MonoBehaviour
     private bool shouldType = true;
     private int stringsLength;
 
+    private CutsceneImages ci;
+
     //Gets text component and finds length of strings array.
     private void Start()
     {
-        text = FindObjectOfType<TextMeshProUGUI>();
+        text = GetComponent<TextMeshProUGUI>();
         stringsLength = strings.Length;
+        ci = FindObjectOfType<CutsceneImages>();
     }
 
     // Update is called once per frame
@@ -46,6 +49,7 @@ public class CutsceneDialogue : MonoBehaviour
             //If the boolean is false, then wait a longer period of time before resetting for the next string.
             if (delay >= 5f && i < stringsLength - 1)
             {
+                ci.ChangeImage();
                 delay = 0f;
                 shouldType = true;
                 j = 0;

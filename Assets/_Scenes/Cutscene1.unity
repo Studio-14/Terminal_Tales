@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 1134958122}
   - component: {fileID: 1134958124}
   - component: {fileID: 1134958123}
+  - component: {fileID: 1134958126}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -342,6 +343,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134958121}
   m_CullTransparentMesh: 0
+--- !u!114 &1134958126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134958121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6ecdf103fe8c944929f150458861cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 71c069428a010b34f84801b951aa0e7b, type: 3}
+  - {fileID: 21300000, guid: 415972f2abdac1a499cbe0a22ce4d16e, type: 3}
 --- !u!1 &1164323700
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +370,6 @@ GameObject:
   - component: {fileID: 1164323703}
   - component: {fileID: 1164323702}
   - component: {fileID: 1164323701}
-  - component: {fileID: 1164323705}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -443,25 +458,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!95 &1164323705
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164323700}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7eb4488aa5a03d045be852a87df081a1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1193168000
 GameObject:
   m_ObjectHideFlags: 0
