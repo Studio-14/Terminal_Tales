@@ -16,6 +16,13 @@ public class Teleport : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.transform.position = new Vector3(teleportX, teleportY, teleportZ);
+            
+            //Drop items if there are any
+            DropItem[] di = GetComponents<DropItem>();
+            for (int i = 0; i < di.Length; i++)
+            {
+                di[i].Drop();
+            }
         }
     }
 }
