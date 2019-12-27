@@ -9,20 +9,22 @@ public class RedKey : Key
     [SerializeField] private float newX = 0;
     [SerializeField] private float newY = 0;
     [SerializeField] private float newZ = 0;
-    
+
     public override void OnTriggerEnter2D(Collider2D other)
     {
-        if (!hasTeleported)
+        if (other.CompareTag("Player"))
         {
-            if (other.CompareTag("Player"))
+            if (!hasTeleported)
             {
                 transform.position = new Vector3(newX, newY, newZ);
                 hasTeleported = true;
             }
+            else
+            {
+                PickUp();
+            }
         }
-        else
-        {
-            PickUp();
-        }
+        
+        
     }
 }
