@@ -304,8 +304,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 124.97}
-  m_SizeDelta: {x: 830.1, y: 830.06}
+  m_AnchoredPosition: {x: -0.014984, y: 124.97}
+  m_SizeDelta: {x: 1920, y: 830.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1134958123
 MonoBehaviour:
@@ -327,7 +327,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 71c069428a010b34f84801b951aa0e7b, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -357,7 +357,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprites:
   - {fileID: 21300000, guid: 71c069428a010b34f84801b951aa0e7b, type: 3}
-  - {fileID: 21300000, guid: 415972f2abdac1a499cbe0a22ce4d16e, type: 3}
+  - {fileID: 21300000, guid: 71c069428a010b34f84801b951aa0e7b, type: 3}
+  - {fileID: 21300000, guid: c8335b81c9835454aa861b5929a78a0c, type: 3}
+  - {fileID: 21300000, guid: 0643b12fd206492418d9e96be3e70a66, type: 3}
+  - {fileID: 21300000, guid: 71c069428a010b34f84801b951aa0e7b, type: 3}
 --- !u!1 &1164323700
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,8 +496,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 126.29999}
-  m_SizeDelta: {x: 1920, y: 252.6}
+  m_AnchoredPosition: {x: 0.9, y: 126.29999}
+  m_SizeDelta: {x: 1660.2, y: 252.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1193168002
 MonoBehaviour:
@@ -629,4 +632,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strings:
   - This is Alfred.
-  - He's the villain of this game.
+  - He's not the good guy of the story, which is unusual since most stories introduce
+    the good guy. But we'll get to that.
+  - Alfred is a professional hacker. He's hacked dozens of banks as part of his crime
+    ring and sends the money across the United States to Los Angeles.
+  - From there he then flies the money to Germany.
+  - While this route may seem confusing, the sheer stupidity of it has managed to
+    fool the IRS and US Customs from finding any of it.
