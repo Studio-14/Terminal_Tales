@@ -357,10 +357,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprites:
   - {fileID: 21300000, guid: 71c069428a010b34f84801b951aa0e7b, type: 3}
-  - {fileID: 21300000, guid: 71c069428a010b34f84801b951aa0e7b, type: 3}
   - {fileID: 21300000, guid: c8335b81c9835454aa861b5929a78a0c, type: 3}
   - {fileID: 21300000, guid: 0643b12fd206492418d9e96be3e70a66, type: 3}
   - {fileID: 21300000, guid: 71c069428a010b34f84801b951aa0e7b, type: 3}
+  - {fileID: 21300000, guid: de46cfcc749de8b469f02276c41b5f24, type: 3}
+  - {fileID: 21300000, guid: c7cd8085396d37d4b81fb0c4f4c6b60c, type: 3}
 --- !u!1 &1164323700
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,11 +632,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strings:
-  - This is Alfred.
-  - He's not the good guy of the story, which is unusual since most stories introduce
-    the good guy. But we'll get to that.
+  - This is Alfred. He's the antagonist of this tale.
   - Alfred is a professional hacker. He's hacked dozens of banks as part of his crime
-    ring and sends the money across the United States to Los Angeles.
+    ring and sends the money across the country to Los Angeles.
   - From there he then flies the money to Germany.
   - While this route may seem confusing, the sheer stupidity of it has managed to
     fool the IRS and US Customs from finding any of it.
+  - 'Unfortunately for Clark: Defender of the System, who is the main character of
+    this tale, Alfred is about to hack into his system.'
+  - However, Clark is determined to put a stop to Alfred. But he's going to need some
+    help from Wise Master Putty...
