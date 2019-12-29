@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     //Gets sprite renderer from player object.
     private SpriteRenderer sr;
 
-    private bool isJumping, isGrounded, isSprinting;
+    private bool isJumping, isGrounded, isSprinting, isRight = true;
     
     //Colors for the player's injury status
     private Color normal = new Color(0, 255, 0);
@@ -105,6 +105,17 @@ public class Player : MonoBehaviour
     {
         //Floats that use the Unity input axes for movement.
         float horizontal = Input.GetAxis("Horizontal");
+
+        //Flips the character if necessary.
+        if (horizontal > 0 && !isRight)
+        {
+            Flip();
+        }
+        else if (horizontal < 0 && isRight)
+        {
+            Flip();
+        }
+
         float jump = Input.GetAxis("Jump");
 
         //If the player wants to sprint, their speed will be doubled.
@@ -186,5 +197,13 @@ public class Player : MonoBehaviour
     {
         isGrounded = true;
         isJumping = false;
+    }
+
+    private void Flip()
+    {
+        //Inverts the boolean to prevent flipping too often.
+        isRight = !isRight;
+        //Rotates the player left or right.
+        transform.Rotate(0f, 180f, 0f);
     }
 }
