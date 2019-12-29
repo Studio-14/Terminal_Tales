@@ -27,6 +27,13 @@ public class Player : MonoBehaviour
 
     //Timer for resetting the player's color.
     private float hurtTimer;
+    
+    //Delay timer for shooting
+    private float delayTimer;
+    
+    //Declares what the dealy to shoot should be
+    [SerializeField]
+    private float shootingDelay = 0.4f;
 
     //Boolean that determines the injury status.
     public static bool isHurt;
@@ -39,6 +46,12 @@ public class Player : MonoBehaviour
 
     //AudioSource component on player
     private AudioSource audioSource;
+    
+    //Bullet prefab
+    public GameObject Bullet;
+    
+    //Transform of Fire Point
+    public Transform firePoint;
 
     void Start()
     {
@@ -99,6 +112,9 @@ public class Player : MonoBehaviour
                 hurtTimer = 0;
             }
         }
+
+        //Timer that updates with time to allow the player to shoot
+        delayTimer += Time.deltaTime;
     }
 
     void FixedUpdate()
@@ -138,6 +154,13 @@ public class Player : MonoBehaviour
         if (jump >= 1f && isGrounded && !isJumping)
         {
             Jumping();
+        }
+
+        //If the player presses the button to fire and the delay timer has been met, then fire the bullet and reset the timer.
+        if (Input.GetAxis("Fire1") >= 1f && delayTimer >= shootingDelay)
+        {
+            delayTimer = 0f;
+            Fire();
         }
     }
 
@@ -205,5 +228,11 @@ public class Player : MonoBehaviour
         isRight = !isRight;
         //Rotates the player left or right.
         transform.Rotate(0f, 180f, 0f);
+    }
+
+    //Creates a bullet in the scene
+    private void Fire()
+    {
+        Instantiate(Bullet, firePoint.position, firePoint.rotation);
     }
 }
