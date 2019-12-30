@@ -24,7 +24,11 @@ public class Bullet : MonoBehaviour
         {
             other.gameObject.GetComponent<Enemy>().takeDamage(damage);
         }
-        //Always destroy the bullet after collision.
-        Destroy(gameObject);
+        //Destroy the bullet when appropriate
+        if (!other.gameObject.GetComponent<Checkpoint>() && !other.gameObject.GetComponent<Key>() &&
+            !other.gameObject.GetComponent<RedKey>())
+        {
+            Destroy(gameObject);
+        }
     }
 }

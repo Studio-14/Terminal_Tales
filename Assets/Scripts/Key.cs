@@ -16,6 +16,9 @@ public class Key : MonoBehaviour
     //This occurs when you hit the key
     public virtual void OnTriggerEnter2D(Collider2D other)
     {
-        PickUp();
+        if (other.gameObject.CompareTag("Player"))
+        {
+            PickUp();
+        }
     }
 }
