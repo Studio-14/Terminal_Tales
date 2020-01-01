@@ -159,4 +159,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   amountOfDamage: 100
-  canTakeDamage: 1
+  playerCanTakeDamage: 1
+  canBeKilled: 0

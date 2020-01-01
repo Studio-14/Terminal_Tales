@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Enemy : MonoBehaviour
 {
@@ -15,8 +16,10 @@ public class Enemy : MonoBehaviour
     private bool isHurt = false;
     
     //Boolean that determines if the player should lose health.
-    public bool canTakeDamage = true;
+    [FormerlySerializedAs("canTakeDamage")] public bool playerCanTakeDamage = true;
 
+    public bool canBeKilled = true;
+    
     private SpriteRenderer sr;
 
     private void Start()
@@ -58,14 +61,17 @@ public class Enemy : MonoBehaviour
     //Take damage function
     public void takeDamage(int damageToTake)
     {
-        health -= damageToTake;
-        isHurt = true;
+        if (canBeKilled)
+        {
+            health -= damageToTake;
+            isHurt = true;
+        }
     }
 
     //If a player enters the trigger, take damage
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player") && canTakeDamage)
+        if (other.gameObject.CompareTag("Player") && playerCanTakeDamage)
         {
             Player.takeDamage(amountOfDamage);
         }
