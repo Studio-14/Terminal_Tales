@@ -7,9 +7,9 @@ public class Grounding : MonoBehaviour
     //If the player is on top of the platform, ground the player
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Foot Trigger"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            other.GetComponentInParent<Player>().Ground();
+            other.GetComponent<Player>().Ground();
         }
     }
 }

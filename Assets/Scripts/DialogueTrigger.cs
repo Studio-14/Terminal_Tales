@@ -67,7 +67,7 @@ public class DialogueTrigger : MonoBehaviour
     //When leaving the trigger, set the text to nothing.
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Foot Trigger") || other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             shouldType = false;
         }
