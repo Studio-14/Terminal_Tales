@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class NextLevel : MonoBehaviour
 {
 
-    [SerializeField] private bool isTutorial;
+    public bool isTutorial;
     
     private void OnTriggerEnter2D(Collider2D other)
     {

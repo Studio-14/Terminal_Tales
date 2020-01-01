@@ -20,7 +20,7 @@ public class Checkpoint : MonoBehaviour
     //When entering the trigger, save the player's location to PlayerPrefs.
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Foot Trigger"))
+        if (other.gameObject.CompareTag("Player"))
         {
             PlayerPrefsManager.setLocation(transform.position);
             

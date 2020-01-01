@@ -56,7 +56,7 @@ public class DialogueTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         //If the object that triggered the trigger is the player, start "typing" the dialogue text.
-        if (other.gameObject.CompareTag("Foot Trigger") || other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             shouldType = true;
             //Sets the length here in case the text is changed during game play.

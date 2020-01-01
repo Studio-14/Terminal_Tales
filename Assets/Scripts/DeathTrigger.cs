@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class DeathTrigger : MonoBehaviour
 {
 
-    [SerializeField] private bool isTutorial;
+    public bool isTutorial;
     //If the player enters the death trigger, it takes an entire life.
     private void OnTriggerEnter2D(Collider2D other)
     {
