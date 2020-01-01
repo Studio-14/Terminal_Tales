@@ -1,1 +1,0 @@
-If you want to add dialogue to a platform, simply add the DialogueTrigger component to a specific platform.

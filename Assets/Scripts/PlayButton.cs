@@ -16,8 +16,17 @@ public class PlayButton : MonoBehaviour
             PlayerPrefsManager.setHealth(100);
             Player.isStarting = true;
         }
-        //TODO: Add tutorial and load if necessary
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //Checks if tutorial has been completed. If not, show cutscene and tutorial.
+        if (PlayerPrefsManager.getTutorialComplete() == 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        //Otherwise, load the last level the player was on.
+        else
+        {
+            SceneManager.LoadScene(PlayerPrefsManager.getScene());
+        }
+
         Cursor.visible = false;
     }
 

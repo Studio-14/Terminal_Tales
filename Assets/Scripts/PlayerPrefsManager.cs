@@ -23,6 +23,8 @@ public class PlayerPrefsManager : MonoBehaviour
 
     private const string VOLUME = "volume";
 
+    private const string TUTORIAL_COMPLETE = "tutorial_complete";
+
     //Retrieves lives from PlayerPrefs.
     public static int getLives()
     { 
@@ -129,5 +131,17 @@ public class PlayerPrefsManager : MonoBehaviour
     public static void setVolume(float volume)
     {
         PlayerPrefs.SetFloat(VOLUME, volume);
+    }
+
+    //Retrieves tutorial value (like a boolean) from PlayerPrefs
+    public static int getTutorialComplete()
+    {
+        return PlayerPrefs.GetInt(TUTORIAL_COMPLETE);
+    }
+
+    //Sets tutorial complete value in PlayerPrefs
+    public static void setTutorialComplete(int value)
+    {
+        PlayerPrefs.SetInt(TUTORIAL_COMPLETE, value);
     }
 }
