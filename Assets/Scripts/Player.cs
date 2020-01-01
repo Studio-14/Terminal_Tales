@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
 
         isJumping = false;
-        isGrounded = true;
+        isGrounded = false;
         isSprinting = false;
 
         //Gets AudioSource component
