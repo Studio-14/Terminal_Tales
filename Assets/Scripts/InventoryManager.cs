@@ -81,4 +81,18 @@ public class InventoryManager : MonoBehaviour
         
         SaveInventory();
     }
+
+    //Determines whether player has all three keys
+    public static bool hasAllKeys()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            if (!inventory[i])
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
