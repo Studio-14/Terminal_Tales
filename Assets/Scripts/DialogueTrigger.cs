@@ -36,7 +36,7 @@ public class DialogueTrigger : MonoBehaviour
 
         //Once triggered by the platform, start the typing effect by adding one letter at a time to another string
         //and displaying the work in progress string.
-        if (shouldType && dialogueTimer >= 0.075f && i < dialogueLength)
+        if (shouldType && dialogueTimer >= 0.055f && i < dialogueLength)
         {
             dialogueBuild += dialogue[i];
             i++;
