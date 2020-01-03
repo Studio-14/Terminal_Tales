@@ -33,7 +33,7 @@ public class CutsceneDialogue : MonoBehaviour
         //When the boolean is true, start typing the dialogue when the delay is met
         if (shouldType)
         {
-            if (delay >= 0.075f && j < strings[i].Length)
+            if (delay >= 0.055f && j < strings[i].Length)
             {
                 delay = 0f;
                 dialogueBuild += strings[i][j];
