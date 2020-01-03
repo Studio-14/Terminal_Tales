@@ -150,6 +150,7 @@ MonoBehaviour:
   jumpSound: {fileID: 8300000, guid: d548d204389b062489997e7d547ae05c, type: 3}
   Bullet: {fileID: 5895542505750476865, guid: 2e30aec7e3dbb584f98d89cf7d10f66a, type: 3}
   firePoint: {fileID: 3958153945924011804}
+  firingSound: {fileID: 8300000, guid: 064477aaebd4cc345b290137ba35e632, type: 3}
 --- !u!82 &3243965802127051472
 AudioSource:
   m_ObjectHideFlags: 0

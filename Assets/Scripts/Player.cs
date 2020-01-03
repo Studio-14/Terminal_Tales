@@ -52,6 +52,9 @@ public class Player : MonoBehaviour
     
     //Transform of Fire Point
     public Transform firePoint;
+    
+    //Sound that plays when bullet is fired
+    public AudioClip firingSound;
 
     void Start()
     {
@@ -189,9 +192,7 @@ public class Player : MonoBehaviour
 
     void Jumping()
     {
-        //Sets the audioSource clip to the jump sound and plays the jump sound.
-        audioSource.clip = jumpSound;
-        audioSource.Play();
+        PlaySound(jumpSound);
         //Jumps the player up and sets booleans
         rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
         isGrounded = false;
@@ -230,9 +231,17 @@ public class Player : MonoBehaviour
         transform.Rotate(0f, 180f, 0f);
     }
 
-    //Creates a bullet in the scene
+    //Creates a bullet in the scene and makes a firing noise.
     private void Fire()
     {
+        PlaySound(firingSound);
         Instantiate(Bullet, firePoint.position, firePoint.rotation);
+    }
+
+    //Sets the audioSource clip to the a and plays the sound.
+    private void PlaySound(AudioClip sound)
+    {
+        audioSource.clip = sound;
+        audioSource.Play();
     }
 }
