@@ -2493,7 +2493,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue
       value: Alright, I think you're ready to go. I'll be able to communicate with
-        you with any of these indicators that you'll encounter. Good luck, Clark!
+        you with any of these indicators that look like me. Good luck, Clark!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7369a7280e7e04bb65b938a08c38b0, type: 3}
