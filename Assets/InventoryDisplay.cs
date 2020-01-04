@@ -5,14 +5,8 @@ using UnityEngine.UI;
 
 public class InventoryDisplay : MonoBehaviour
 {
-    private Image[] keys;
+    public Image[] keys;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        //Finds images in canvas with keys.
-        keys = FindObjectsOfType<Image>();
-    }
 
     // Update is called once per frame
     void LateUpdate()
