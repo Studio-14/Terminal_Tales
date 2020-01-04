@@ -2238,6 +2238,31 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1365082519847880634, guid: b3047770512835447a40ee5c0d4ea6b8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 362.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365082519847880634, guid: b3047770512835447a40ee5c0d4ea6b8,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 725.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218291622306560441, guid: b3047770512835447a40ee5c0d4ea6b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218291623381669633, guid: b3047770512835447a40ee5c0d4ea6b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3220331974015679038, guid: b3047770512835447a40ee5c0d4ea6b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1187842130, guid: b3047770512835447a40ee5c0d4ea6b8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -125
@@ -2261,21 +2286,6 @@ PrefabInstance:
     - target: {fileID: 1187842130, guid: b3047770512835447a40ee5c0d4ea6b8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5218291622306560441, guid: b3047770512835447a40ee5c0d4ea6b8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5218291623381669633, guid: b3047770512835447a40ee5c0d4ea6b8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3220331974015679038, guid: b3047770512835447a40ee5c0d4ea6b8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1187842131, guid: b3047770512835447a40ee5c0d4ea6b8, type: 3}
       propertyPath: m_text
@@ -2316,16 +2326,6 @@ PrefabInstance:
     - target: {fileID: 1187842131, guid: b3047770512835447a40ee5c0d4ea6b8, type: 3}
       propertyPath: m_fontColor.b
       value: 0.8941177
-      objectReference: {fileID: 0}
-    - target: {fileID: 1365082519847880634, guid: b3047770512835447a40ee5c0d4ea6b8,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 362.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 1365082519847880634, guid: b3047770512835447a40ee5c0d4ea6b8,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 725.07
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3047770512835447a40ee5c0d4ea6b8, type: 3}
@@ -2549,7 +2549,8 @@ PrefabInstance:
     - target: {fileID: 6265306688044859593, guid: 9e7369a7280e7e04bb65b938a08c38b0,
         type: 3}
       propertyPath: dialogue
-      value: Alright, I think you're ready to go.
+      value: Alright, I think you're ready to go. I'll be able to communicate with
+        you with any of these indicators that you'll encounter. Good luck, Clark!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7369a7280e7e04bb65b938a08c38b0, type: 3}
