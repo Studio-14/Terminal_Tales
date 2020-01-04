@@ -83,4 +83,11 @@ public class Settings : MonoBehaviour
     {
         SceneManager.LoadScene("0_Title");
     }
+
+    //Deletes all game data and reloads settings menu
+    public void DeleteData()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
