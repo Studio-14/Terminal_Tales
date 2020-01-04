@@ -11,5 +11,6 @@ public class Fade : MonoBehaviour
     void LoadNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Player.isStarting = true;
     }
 }
