@@ -6,7 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class Fade : MonoBehaviour
 {
-
+    void Update()
+    {
+        //Allows skipping of cutscene
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            LoadNextScene();
+        }
+    }
+    
     //Loads next scene. Triggers by animation.
     void LoadNextScene()
     {
