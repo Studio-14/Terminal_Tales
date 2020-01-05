@@ -1519,6 +1519,26 @@ PrefabInstance:
       propertyPath: shootingDelay
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 5046920364052939710, guid: 8317224556dbb6747ad1602486ca75bd,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992139609720558773, guid: 8317224556dbb6747ad1602486ca75bd,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992139609720558773, guid: 8317224556dbb6747ad1602486ca75bd,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: bdc18ddfee4ca344c8f91975be082388, type: 2}
+    - target: {fileID: 3243965802127051472, guid: 8317224556dbb6747ad1602486ca75bd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8317224556dbb6747ad1602486ca75bd, type: 3}
 --- !u!1001 &578914227
