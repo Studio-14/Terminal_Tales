@@ -12,7 +12,6 @@ public class DeathTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
                 PlayerPrefsManager.setHealth(0);
-                other.gameObject.GetComponent<Player>().Lives();
         }
     }
 }
