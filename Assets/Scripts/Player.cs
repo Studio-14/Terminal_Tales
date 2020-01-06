@@ -31,6 +31,9 @@ public class Player : MonoBehaviour
     //Delay timer for shooting
     private float delayTimer;
     
+    //Timer for jiggling the player
+    private float jiggleTimer;
+    
     //Declares what the dealy to shoot should be
     [SerializeField]
     private float shootingDelay = 0.4f;
@@ -152,6 +155,27 @@ public class Player : MonoBehaviour
         
         //Calls HandleMovement for horizontal movement
         HandleMovement(horizontal);
+        
+        //Might fix the platform bug
+        if (((horizontal - 0) > 0.5f) || (horizontal - 0) < -0.5f)
+        {
+            float forwardDistance = 0.1f;
+            if (!isRight)
+                forwardDistance *= -1;
+            
+            if ((jiggleTimer - 0f) < 0.01)
+            {
+                transform.Translate(forwardDistance, 0, 0);
+            }
+
+            jiggleTimer += Time.deltaTime;
+
+            if (jiggleTimer >= 0.5f)
+            {
+                transform.Translate(-forwardDistance, 0, 0);
+                jiggleTimer = 0f;
+            }
+        }
 
         //If the player is grounded and is not currently jumping, and the jump key is pressed, then call the Jump function.
         if (jump >= 1f && isGrounded && !isJumping)
