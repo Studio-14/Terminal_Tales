@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 578891965087031047}
   - component: {fileID: 578891965087031046}
   - component: {fileID: 578891965087031044}
-  - component: {fileID: 578891965087031045}
   m_Layer: 0
   m_Name: Teleporter
   m_TagString: Untagged
@@ -74,20 +73,3 @@ MonoBehaviour:
   teleportX: 13.93
   teleportY: 10
   teleportZ: -1
---- !u!114 &578891965087031045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578891965087031049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f757eb79a9c96ca4dbe9d865c8cbb38c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dropItem: {fileID: 6436512032206628060, guid: 73ebe59371f615f4d833f674cd761d3f,
-    type: 3}
-  dropX: 12
-  dropY: 0.98
-  dropZ: 0
