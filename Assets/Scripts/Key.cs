@@ -10,11 +10,11 @@ public class Key : MonoBehaviour
     private void Start()
     {
         //If the item does exist in the inventory, then destroy it.
-            if (PlayerPrefsManager.getInventory()[(int)itemTypes] == '1')
-            {
-                Destroy(gameObject);
-            }
+        if (PlayerPrefsManager.getInventory()[(int)itemTypes] == '1')
+        {
+            Destroy(gameObject);
         }
+    }
 
     //Pick up the key
     public void PickUp()
