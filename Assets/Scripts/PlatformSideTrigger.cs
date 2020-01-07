@@ -7,7 +7,10 @@ public class PlatformSideTrigger : MonoBehaviour
 {
     public void OnTriggerEnter2D(Collider2D other)
     {
-        other.GetComponent<Player>().UpdateCorner();
-        Debug.Log("Corner detected");
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.GetComponent<Player>().UpdateCorner();
+            Debug.Log("Corner detected");
+        }
     }
 }

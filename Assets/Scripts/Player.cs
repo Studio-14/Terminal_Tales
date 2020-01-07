@@ -251,11 +251,8 @@ public class Player : MonoBehaviour
     //Handles corner interactions
     public void UpdateCorner()
     {
-        float forwardDistance = 0.01f;
+        float forwardDistance = 0.05f;
 
-        if (!isRight)
-            forwardDistance *= -1;
-        
         transform.Translate(forwardDistance, 0, 0);
     }
 }
