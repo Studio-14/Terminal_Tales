@@ -450,7 +450,7 @@ PrefabInstance:
       propertyPath: dialogue
       value: That jump really was tense, wasn't it? Anyways, next subject. Alfred
         is using semicolons as his henchmen, and jumping on their heads won't work.
-        You'll need to use [X] to shoot at them.
+        You'll need to use [Z] to shoot at them.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7369a7280e7e04bb65b938a08c38b0, type: 3}
@@ -558,7 +558,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 875949922}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1423,7 +1423,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 875949922}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1729,11 +1729,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1093266258}
     m_Modifications:
-    - target: {fileID: 6384400084594374268, guid: 41aff91f154d1a546955832fcf6be567,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 6384400084594374270, guid: 41aff91f154d1a546955832fcf6be567,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1789,6 +1784,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.00001
       objectReference: {fileID: 0}
+    - target: {fileID: 6384400084594374268, guid: 41aff91f154d1a546955832fcf6be567,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall (4)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41aff91f154d1a546955832fcf6be567, type: 3}
 --- !u!4 &1537473696 stripped
@@ -1804,11 +1804,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1093266258}
     m_Modifications:
-    - target: {fileID: 6384400084594374268, guid: 41aff91f154d1a546955832fcf6be567,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall
-      objectReference: {fileID: 0}
     - target: {fileID: 6384400084594374270, guid: 41aff91f154d1a546955832fcf6be567,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1863,6 +1858,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6384400084594374268, guid: 41aff91f154d1a546955832fcf6be567,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41aff91f154d1a546955832fcf6be567, type: 3}
@@ -2176,6 +2176,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3220331974015679038, guid: b3047770512835447a40ee5c0d4ea6b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5152364247750319591, guid: b3047770512835447a40ee5c0d4ea6b8,
         type: 3}
       propertyPath: m_Enabled
@@ -2197,11 +2202,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5218291623381669633, guid: b3047770512835447a40ee5c0d4ea6b8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3220331974015679038, guid: b3047770512835447a40ee5c0d4ea6b8,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2279,11 +2279,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1093266258}
     m_Modifications:
-    - target: {fileID: 6384400084594374268, guid: 41aff91f154d1a546955832fcf6be567,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 6384400084594374270, guid: 41aff91f154d1a546955832fcf6be567,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2338,6 +2333,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6384400084594374268, guid: 41aff91f154d1a546955832fcf6be567,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41aff91f154d1a546955832fcf6be567, type: 3}
@@ -2510,11 +2510,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1093266258}
     m_Modifications:
-    - target: {fileID: 6384400084594374268, guid: 41aff91f154d1a546955832fcf6be567,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6384400084594374270, guid: 41aff91f154d1a546955832fcf6be567,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2569,6 +2564,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6384400084594374268, guid: 41aff91f154d1a546955832fcf6be567,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41aff91f154d1a546955832fcf6be567, type: 3}
@@ -2894,11 +2894,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1093266258}
     m_Modifications:
-    - target: {fileID: 6384400084594374268, guid: 41aff91f154d1a546955832fcf6be567,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 6384400084594374270, guid: 41aff91f154d1a546955832fcf6be567,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2953,6 +2948,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6384400084594374268, guid: 41aff91f154d1a546955832fcf6be567,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41aff91f154d1a546955832fcf6be567, type: 3}
