@@ -155,28 +155,6 @@ public class Player : MonoBehaviour
         
         //Calls HandleMovement for horizontal movement
         HandleMovement(horizontal);
-        
-        //Might fix the stuck bug
-        if (((horizontal - 0) > 0.5f) || (horizontal - 0) < -0.5f)
-        {
-            float forwardDistance = 0.001f;
-
-            if (!isRight)
-                forwardDistance *= -1;
-            
-            if (jiggleTimer <= 0.01f)
-            {
-                transform.Translate(forwardDistance, 0, 0);
-            }
-
-            jiggleTimer += Time.deltaTime;
-
-            if (jiggleTimer >= 0.02f)
-            {
-                transform.Translate(-forwardDistance, 0, 0);
-                jiggleTimer = 0f;
-            }
-        }
 
         //If the player is grounded and is not currently jumping, and the jump key is pressed, then call the Jump function.
         if (jump >= 1f && isGrounded && !isJumping)
@@ -268,5 +246,16 @@ public class Player : MonoBehaviour
     {
         audioSource.clip = sound;
         audioSource.Play();
+    }
+    
+    //Handles corner interactions
+    public void UpdateCorner()
+    {
+        float forwardDistance = 0.01f;
+
+        if (!isRight)
+            forwardDistance *= -1;
+        
+        transform.Translate(forwardDistance, 0, 0);
     }
 }
