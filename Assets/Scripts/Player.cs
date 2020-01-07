@@ -59,6 +59,8 @@ public class Player : MonoBehaviour
     //Sound that plays when bullet is fired
     public AudioClip firingSound;
 
+    public float horizontal;
+    
     void Start()
     {
         //If the isStarting boolean is true, then set the start position to the object found.
@@ -97,6 +99,8 @@ public class Player : MonoBehaviour
     //Checks the lives every frame
     private void Update()
     {
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        
         Lives();
 
         //If the isHurt boolean is true
@@ -126,7 +130,7 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         //Floats that use the Unity input axes for movement.
-        float horizontal = Input.GetAxis("Horizontal");
+        horizontal = Input.GetAxis("Horizontal");
 
         //Flips the character if necessary.
         if (horizontal > 0 && !isRight)
@@ -209,6 +213,11 @@ public class Player : MonoBehaviour
         {
             isGrounded = false;
         }
+
+        if (other.gameObject.CompareTag("Platform Side Trigger"))
+        {
+            rb.bodyType = RigidbodyType2D.Dynamic;
+        }
     }
     
     //Take damage function
@@ -249,10 +258,16 @@ public class Player : MonoBehaviour
     }
     
     //Handles corner interactions
-    public void UpdateCorner()
+    public void OnTriggerStay2D(Collider2D other)
     {
-        float forwardDistance = 0.05f;
+        if (other.CompareTag("Platform Side Trigger") && (((horizontal - 0) <= -1f ) || ((horizontal - 0) >= 1f)))
+        {
+            float forwardDistance = 0.01f;
 
-        transform.Translate(forwardDistance, 0, 0);
+            rb.bodyType = RigidbodyType2D.Kinematic;
+            Debug.Log("Entering the realm of kinematics");
+
+            transform.Translate(forwardDistance, 0, 0);
+        }
     }
 }
