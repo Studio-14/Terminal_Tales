@@ -156,21 +156,22 @@ public class Player : MonoBehaviour
         //Calls HandleMovement for horizontal movement
         HandleMovement(horizontal);
         
-        //Might fix the platform bug
+        //Might fix the stuck bug
         if (((horizontal - 0) > 0.5f) || (horizontal - 0) < -0.5f)
         {
-            float forwardDistance = 0.1f;
+            float forwardDistance = 0.001f;
+
             if (!isRight)
                 forwardDistance *= -1;
             
-            if ((jiggleTimer - 0f) < 0.01)
+            if (jiggleTimer <= 0.01f)
             {
                 transform.Translate(forwardDistance, 0, 0);
             }
 
             jiggleTimer += Time.deltaTime;
 
-            if (jiggleTimer >= 0.5f)
+            if (jiggleTimer >= 0.02f)
             {
                 transform.Translate(-forwardDistance, 0, 0);
                 jiggleTimer = 0f;
