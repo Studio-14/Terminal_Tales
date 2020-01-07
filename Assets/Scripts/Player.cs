@@ -265,7 +265,6 @@ public class Player : MonoBehaviour
             float forwardDistance = 0.01f;
 
             rb.bodyType = RigidbodyType2D.Kinematic;
-            Debug.Log("Entering the realm of kinematics");
 
             transform.Translate(forwardDistance, 0, 0);
         }
