@@ -272,7 +272,7 @@ Animator:
   m_GameObject: {fileID: 190013660}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8ed0ec0348fe57d4b8229f8fc4e59005, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7843db742869f1d46a8aa528639ce50e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -304,7 +304,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1063440772523626783, guid: af74fd28a85c40a4bb1e2ce093979d3c,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: f6146720bfdf97344aa90ce6b0ee8f8b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d79b0e567d274a148aff117961c36a83, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 71c069428a010b34f84801b951aa0e7b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 90454a05fa0b2ea4099434bd0cef1b37, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -560,11 +560,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 71c069428a010b34f84801b951aa0e7b, type: 3}
-  - {fileID: 21300000, guid: c8335b81c9835454aa861b5929a78a0c, type: 3}
-  - {fileID: 21300000, guid: 0643b12fd206492418d9e96be3e70a66, type: 3}
-  - {fileID: 21300000, guid: 71c069428a010b34f84801b951aa0e7b, type: 3}
-  - {fileID: 21300000, guid: 938bdfddf5ad9fd4ea3d0b5a6c61c00c, type: 3}
+  - {fileID: 21300000, guid: 90454a05fa0b2ea4099434bd0cef1b37, type: 3}
+  - {fileID: 21300000, guid: d8ca27ac3a0f001408a28d5fff8a8ffc, type: 3}
   - {fileID: 21300000, guid: c7cd8085396d37d4b81fb0c4f4c6b60c, type: 3}
 --- !u!1 &1164323700
 GameObject:
@@ -734,7 +731,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278255615
-  m_fontColor: {r: 1, g: 1, b: 0, a: 1}
+  m_fontColor: {r: 0.89411765, g: 0.89411765, b: 0.89411765, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -758,7 +755,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 2
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -837,13 +834,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strings:
-  - This is Alfred. He's the antagonist of this tale.
-  - Alfred is a professional hacker. He's hacked dozens of banks as part of his crime
-    ring and sends the money across the country to Los Angeles.
-  - From there he then flies the money to Germany.
-  - While this route may seem confusing, the sheer stupidity of it has managed to
-    fool the IRS and US Customs from finding any of it.
-  - 'Unfortunately for Clark: Defender of the System, who is the protagonist of this
-    tale, Alfred is about to hack into his system.'
-  - However, Clark is determined to put a stop to Alfred. But he's going to need some
-    help from Wise Master Putty...
+  - 'Alfred has already landed at LAX? But that''s impossible, the flight from CLT
+    takes 5 1/2 hours! He couldn''t have set those traps while he was flying, no one
+    can afford those in flight WiFi prices. '
+  - And time really isn't on our side, it also looks like they're starting to load
+    everything onto his next flight.
+  - Clark, I'm going to connect to that flight's computer and send you in. We need
+    to stop that flight from taking off or else Alfred is outside US laws and no one
+    can stop him.
