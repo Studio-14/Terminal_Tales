@@ -260,7 +260,7 @@ public class Player : MonoBehaviour
     //Handles corner interactions
     public void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Platform Side Trigger") && (((horizontal - 0) <= -1f ) || ((horizontal - 0) >= 1f)))
+        if (other.CompareTag("Platform Side Trigger") && (((horizontal - 0) <= -1f ) || ((horizontal - 0) >= 1f)) && (!isJumping))
         {
             float forwardDistance = 0.01f;
 
