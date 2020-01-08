@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3865396003181216259}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.884634, y: 3.46, z: 0}
-  m_LocalScale: {x: 0.11403, y: 0.11403, z: 0.11403}
+  m_LocalScale: {x: 0.059576385, y: 0.059576385, z: 0.059576385}
   m_Children:
   - {fileID: 8712275068363483761}
   - {fileID: 7587723496153704829}
@@ -95,7 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abd4a7b6ef1bc443ba3ee975ecd0d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 5895542505750476865, guid: 2e30aec7e3dbb584f98d89cf7d10f66a, type: 3}
+  shootingCooldown: 1
+  Bullet: {fileID: 8310184059443547356, guid: 5f6f19fa2f0be0a498bb2031bb4ea189, type: 3}
   firePoint1: {fileID: 8712275068363483761}
   firePoint2: {fileID: 7587723496153704829}
   firingSound: {fileID: 8300000, guid: 064477aaebd4cc345b290137ba35e632, type: 3}

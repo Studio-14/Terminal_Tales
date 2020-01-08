@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
             //Destroy the bullet when appropriate
         if (!other.gameObject.GetComponent<Checkpoint>() && !other.gameObject.GetComponent<Key>() &&
             !other.gameObject.GetComponent<RedKey>() && !other.gameObject.GetComponent<HealthPack>() &&
-            !other.GetComponent<DialogueTrigger>())
+            !other.GetComponent<DialogueTrigger>() && !other.GetComponent<Bullet>())
         {
             Destroy(gameObject);
         }
