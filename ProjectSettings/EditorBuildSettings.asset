@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/_Scenes/Level2.unity
     guid: 12e44ab011180e34abc3509d64051bcd
   - enabled: 1
+    path: Assets/_Scenes/Level3.unity
+    guid: 5eaf0e0e0f14c644c8181ab1e997ab50
+  - enabled: 1
+    path: Assets/_Scenes/AlfredBattle.unity
+    guid: 98521cc157442974797c9819adbfda49
+  - enabled: 1
     path: Assets/_Scenes/GameOver.unity
     guid: 36c5052d228978a45865ae91f59747aa
   - enabled: 1
