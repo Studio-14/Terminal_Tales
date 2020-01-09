@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abd4a7b6ef1bc443ba3ee975ecd0d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootingCooldown: 1
+  shootingCooldown: 0.85
   bossCountdown: 0
   Bullet: {fileID: 8310184059443547356, guid: 5f6f19fa2f0be0a498bb2031bb4ea189, type: 3}
   BossBullet: {fileID: 1801346482370931593, guid: 9254e62aaf2ce77468c58c542c190ec9,
@@ -106,7 +106,6 @@ MonoBehaviour:
   BossSprite: {fileID: 21300000, guid: 4c93cacc8fb3b804b973b764b44e0eed, type: 3}
   firePoint1: {fileID: 8712275068363483761}
   firePoint2: {fileID: 7587723496153704829}
-  firingSound: {fileID: 8300000, guid: 064477aaebd4cc345b290137ba35e632, type: 3}
 --- !u!114 &444745599567628277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102156d2f8af59f46b284928dce54229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 300
+  health: 200
   amountOfDamage: 0
   playerCanTakeDamage: 1
   canBeKilled: 1

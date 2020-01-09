@@ -187,6 +187,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5992139609720558773, guid: 8317224556dbb6747ad1602486ca75bd,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992139609720558773, guid: 8317224556dbb6747ad1602486ca75bd,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.6115025
+      objectReference: {fileID: 0}
     - target: {fileID: 8099217193700462801, guid: 8317224556dbb6747ad1602486ca75bd,
         type: 3}
       propertyPath: shootingDelay
@@ -196,6 +206,11 @@ PrefabInstance:
         type: 3}
       propertyPath: jumpHeight
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099217193700462801, guid: 8317224556dbb6747ad1602486ca75bd,
+        type: 3}
+      propertyPath: movementSpeed
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8317224556dbb6747ad1602486ca75bd, type: 3}

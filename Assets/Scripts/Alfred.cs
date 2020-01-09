@@ -101,6 +101,7 @@ public class Alfred : MonoBehaviour
         {
             enemyScript.health = 200;
             enemyScript.canBeKilled = false;
+            shootingCooldown *= 1.3f;
 
             sr.sprite = BossSprite;
             currentBullet = BossBullet;
@@ -114,6 +115,7 @@ public class Alfred : MonoBehaviour
     private void NotBossMode()
     {
         enemyScript.canBeKilled = true;
+        shootingCooldown /= 1.3f;
 
         sr.sprite = NormalSprite;
         currentBullet = Bullet;
