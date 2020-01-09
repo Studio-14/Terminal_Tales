@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
                 di[i].Drop();
             }
             
+            Debug.Log("Death Destroy");
             Destroy(gameObject);
         }
 

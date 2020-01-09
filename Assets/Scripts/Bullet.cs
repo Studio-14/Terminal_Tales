@@ -10,6 +10,8 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D rb;
     public int damage = 5;
 
+    [SerializeField] private bool usesEnemyDamage = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,13 +23,14 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {    
         //Destroy the bullet when appropriate
-         if (!other.gameObject.GetComponent<Checkpoint>() && !other.gameObject.GetComponent<Key>() &&
-             !other.gameObject.GetComponent<RedKey>() && !other.gameObject.GetComponent<HealthPack>() &&
-             !other.GetComponent<DialogueTrigger>())
-         {
-             Destroy(gameObject);
-         }
-         
+        if (!other.gameObject.GetComponent<Checkpoint>() && !other.gameObject.GetComponent<Key>() &&
+            !other.gameObject.GetComponent<RedKey>() && !other.gameObject.GetComponent<HealthPack>() &&
+            !other.GetComponent<DialogueTrigger>() && !other.gameObject.GetComponent<Bullet>() ||  (other.gameObject.GetComponent<Bullet>() && !usesEnemyDamage)) 
+        {
+            Debug.Log("Bullet destroy");
+            Destroy(gameObject);
+        }
+
         if (other.gameObject.GetComponent<Enemy>())
         {
             other.gameObject.GetComponent<Enemy>().takeDamage(damage);
