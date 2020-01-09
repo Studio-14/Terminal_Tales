@@ -60,7 +60,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             if (dialogueTimer >= 1.5f)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                PlayerPrefsManager.setHealth(0);
             }
         }
     }
