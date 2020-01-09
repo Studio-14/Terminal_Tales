@@ -384,6 +384,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alfred
       objectReference: {fileID: 0}
+    - target: {fileID: 3865396003181216259, guid: dedd5e4b33b790e49844496d14cb21ad,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4162717301849680632, guid: dedd5e4b33b790e49844496d14cb21ad,
         type: 3}
       propertyPath: m_LocalPosition.x
