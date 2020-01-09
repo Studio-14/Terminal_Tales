@@ -11,17 +11,12 @@ public class Alfred : MonoBehaviour
     
     private bool isShooting = true;
 
-    private bool shootingTop = false;
-    
     [SerializeField] float shootingCooldown = 1f;
 
     [SerializeField] private float bossCountdown = 0f;
 
     private bool canGoBoss = true;
-    
-    //AudioSource component on player
-    private AudioSource audioSource;
-    
+
     //Bullet prefab
     [SerializeField] private GameObject Bullet = null;
     //Boss bullet
@@ -38,15 +33,16 @@ public class Alfred : MonoBehaviour
     [SerializeField] Transform firePoint1 = null;
 
     [SerializeField] Transform firePoint2 = null;
-    
-    //Sound that plays when bullet is fired
-    [SerializeField] public AudioClip firingSound;
+
+    private bool isBoss = false;
 
     //Enemy component
     private Enemy enemyScript;
     
     //SpriteRenderer component
     private SpriteRenderer sr;
+
+    private int number;
     
     //Startup
     void Start()
@@ -86,9 +82,9 @@ public class Alfred : MonoBehaviour
     //Creates a bullet in the scene and makes a firing noise.
     private void Fire()
     {
-        //PlaySound(firingSound);
+        number = UnityEngine.Random.Range(1, 3);
 
-        if (shootingTop)
+        if (!isBoss && number == 1)
         {
             Instantiate(currentBullet, firePoint1.position, firePoint1.rotation);
         }
@@ -96,8 +92,6 @@ public class Alfred : MonoBehaviour
         {
             Instantiate(currentBullet, firePoint2.position, firePoint2.rotation);
         }
-
-        shootingTop = !shootingTop;
     }
     
     //Alfred goes nuts
@@ -111,6 +105,7 @@ public class Alfred : MonoBehaviour
             sr.sprite = BossSprite;
             currentBullet = BossBullet;
             canGoBoss = false;
+            isBoss = true;
         }
 
     }
@@ -122,5 +117,6 @@ public class Alfred : MonoBehaviour
 
         sr.sprite = NormalSprite;
         currentBullet = Bullet;
+        isBoss = false;
     }
 }
