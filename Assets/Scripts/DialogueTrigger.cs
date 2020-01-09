@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class DialogueTrigger : MonoBehaviour
     private int i;
 
     private bool shouldType;
+
+    [SerializeField] private bool isCivilian = false;
 
     private void Start()
     {
@@ -51,12 +54,21 @@ public class DialogueTrigger : MonoBehaviour
             i = 0;
             text.text = "";
         }
+
+        //When the player fails on the boss battle, reload the scene
+        if (dialogueBuild == dialogue && isCivilian)
+        {
+            if (dialogueTimer >= 1.5f)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         //If the object that triggered the trigger is the player, start "typing" the dialogue text.
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !isCivilian)
         {
             shouldType = true;
             //Sets the length here in case the text is changed during game play.
@@ -67,9 +79,15 @@ public class DialogueTrigger : MonoBehaviour
     //When leaving the trigger, set the text to nothing.
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !isCivilian)
         {
             shouldType = false;
+        }
+        //Used for when the player fails on the boss battle with Alfred.
+        else if (isCivilian)
+        {
+            shouldType = true;
+            dialogueLength = dialogue.Length;
         }
     }
 }
