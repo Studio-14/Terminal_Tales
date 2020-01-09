@@ -19,7 +19,15 @@ public class Bullet : MonoBehaviour
 
     //If the bullet hits an enemy, take damage on the enemy.
     private void OnTriggerEnter2D(Collider2D other)
-    {
+    {    
+        //Destroy the bullet when appropriate
+         if (!other.gameObject.GetComponent<Checkpoint>() && !other.gameObject.GetComponent<Key>() &&
+             !other.gameObject.GetComponent<RedKey>() && !other.gameObject.GetComponent<HealthPack>() &&
+             !other.GetComponent<DialogueTrigger>())
+         {
+             Destroy(gameObject);
+         }
+         
         if (other.gameObject.GetComponent<Enemy>())
         {
             other.gameObject.GetComponent<Enemy>().takeDamage(damage);
@@ -30,12 +38,6 @@ public class Bullet : MonoBehaviour
             other.gameObject.GetComponent<FragileWall>().takeHit();
         }
         
-            //Destroy the bullet when appropriate
-        if (!other.gameObject.GetComponent<Checkpoint>() && !other.gameObject.GetComponent<Key>() &&
-            !other.gameObject.GetComponent<RedKey>() && !other.gameObject.GetComponent<HealthPack>() &&
-            !other.GetComponent<DialogueTrigger>() && !other.GetComponent<Bullet>())
-        {
-            Destroy(gameObject);
-        }
+        
     }
 }
