@@ -1420,11 +1420,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5046920364052939710, guid: 8317224556dbb6747ad1602486ca75bd,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5992139609720558773, guid: 8317224556dbb6747ad1602486ca75bd,
         type: 3}
       propertyPath: m_CollisionDetection
@@ -1439,6 +1434,11 @@ PrefabInstance:
         type: 3}
       propertyPath: shootingDelay
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046920364052939710, guid: 8317224556dbb6747ad1602486ca75bd,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3243965802127051472, guid: 8317224556dbb6747ad1602486ca75bd,
         type: 3}
@@ -3143,7 +3143,8 @@ PrefabInstance:
     - target: {fileID: 6265306688044859593, guid: 9e7369a7280e7e04bb65b938a08c38b0,
         type: 3}
       propertyPath: dialogue
-      value: You can't hurt red enemies, and they will instantly kill you.
+      value: Looks like that red semicolon is guarding one of the keys. You're going
+        to have to outrun him.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7369a7280e7e04bb65b938a08c38b0, type: 3}
@@ -4175,7 +4176,7 @@ PrefabInstance:
     - target: {fileID: 5218291622764808894, guid: b3047770512835447a40ee5c0d4ea6b8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5218291622764808894, guid: b3047770512835447a40ee5c0d4ea6b8,
         type: 3}
