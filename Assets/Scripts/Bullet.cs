@@ -27,7 +27,6 @@ public class Bullet : MonoBehaviour
             !other.gameObject.GetComponent<RedKey>() && !other.gameObject.GetComponent<HealthPack>() &&
             !other.GetComponent<DialogueTrigger>() && !other.gameObject.GetComponent<Bullet>() ||  (other.gameObject.GetComponent<Bullet>() && !usesEnemyDamage)) 
         {
-            Debug.Log("Bullet destroy");
             Destroy(gameObject);
         }
 
