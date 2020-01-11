@@ -43,6 +43,8 @@ public class Alfred : MonoBehaviour
     private SpriteRenderer sr;
 
     private int number;
+
+    public int baseHealth;
     
     //Startup
     void Start()
@@ -50,6 +52,8 @@ public class Alfred : MonoBehaviour
         currentBullet = Bullet;
         enemyScript = GetComponent<Enemy>();
         sr = GetComponent<SpriteRenderer>();
+
+        baseHealth = enemyScript.health;
     }
     
     // Update is called once per frame
