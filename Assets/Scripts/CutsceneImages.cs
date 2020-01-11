@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CutsceneImages : MonoBehaviour
 {
-    public Sprite[] sprites;
+    [SerializeField] private Sprite[] sprites = null;
 
     private Image image;
 

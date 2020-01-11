@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 
 public class Music : MonoBehaviour
 {
-    public AudioMixer audioMixer;
+    [SerializeField] private AudioMixer audioMixer = null;
     private AudioSource audioSource;
     
     //Sets volume of music

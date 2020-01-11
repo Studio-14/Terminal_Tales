@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class HealthPack : MonoBehaviour
 {
-    [SerializeField]
-    private int amountOfHealth = 0;
+    [SerializeField] private int amountOfHealth = 0;
 
     private bool canHeal = true;
     

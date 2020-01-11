@@ -6,9 +6,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-    public float speed = 20f;
+    [SerializeField] private float speed = 20f;
     private Rigidbody2D rb;
-    public int damage = 5;
+    [SerializeField] private int damage = 5;
 
     [SerializeField] private bool usesEnemyDamage = false;
 

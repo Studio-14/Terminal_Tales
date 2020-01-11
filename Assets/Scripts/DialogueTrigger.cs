@@ -9,7 +9,7 @@ public class DialogueTrigger : MonoBehaviour
 {
     private TextMeshProUGUI text;
 
-    public string dialogue;
+    [SerializeField] private string dialogue = null;
 
     private string dialogueBuild;
 
