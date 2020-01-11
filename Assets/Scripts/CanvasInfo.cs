@@ -31,7 +31,7 @@ public class CanvasInfo : MonoBehaviour
         if (boss != null)
         {
             enemyScript = boss.GetComponent<Enemy>();
-            bossbar = GetComponentInChildren<RectTransform>();
+            bossbar = gameObject.transform.Find("BossBar").GetComponent<RectTransform>();
         }
     }
 
