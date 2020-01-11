@@ -99,7 +99,5 @@ public class CanvasInfo : MonoBehaviour
         //Calculate size of bar
         float newWidth = percentHealth * 790;
         bossbar.rect.Set(bossbar.rect.x, bossbar.rect.y, newWidth, bossbar.rect.height);
-        
-        Debug.Log(bossbar.rect.width);
     }
 }
