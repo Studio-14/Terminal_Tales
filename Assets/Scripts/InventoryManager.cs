@@ -16,9 +16,9 @@ public class InventoryManager : MonoBehaviour
         BlueKey
     }
 
-    public const int NumItems = 3;
+    private const int NumItems = 3;
     
-    private static  bool[] inventory = new bool[3];
+    private static bool[] inventory = new bool[3];
     
     //Translates savedData to inventory variables
     static void DecodeInventory(string savedData)

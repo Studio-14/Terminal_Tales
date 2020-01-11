@@ -13,7 +13,7 @@ public class CanvasInfo : MonoBehaviour
     private float flashTimer;
 
     //How long the flash should last.
-    public float flashDelay = 0.25f;
+    [SerializeField] private float flashDelay = 0.25f;
     
     //Gets TextMeshPro from the game objects referenced by the canvas.
     private void Start()

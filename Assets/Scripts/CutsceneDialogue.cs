@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CutsceneDialogue : MonoBehaviour
 {
-    public string[] strings;
+    [SerializeField] private string[] strings = null;
     private string dialogueBuild;
     private TextMeshProUGUI text;
     private int i, j;

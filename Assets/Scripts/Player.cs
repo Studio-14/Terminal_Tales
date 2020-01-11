@@ -10,11 +10,9 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
 
     //Serializing fields allows editing within the Unity editor without making it a public variable.
-    [SerializeField]
-    private float movementSpeed = 2.5f;
+    [SerializeField] private float movementSpeed = 2.5f;
 
-    [SerializeField]
-    private float jumpHeight = 6f;
+    [SerializeField] private float jumpHeight = 6f;
 
     //Gets sprite renderer from player object.
     private SpriteRenderer sr;
@@ -35,29 +33,28 @@ public class Player : MonoBehaviour
     private float jiggleTimer;
     
     //Declares what the dealy to shoot should be
-    [SerializeField]
-    private float shootingDelay = 0.4f;
+    [SerializeField] private float shootingDelay = 0.4f;
 
     //Boolean that determines the injury status.
-    public static bool isHurt;
+    private static bool isHurt;
     
     //Boolean to use for starting position.
     public static bool isStarting;
 
     //Sound that plays when jumping
-    public AudioClip jumpSound;
+    [SerializeField] private AudioClip jumpSound = null;
 
     //AudioSource component on player
     private AudioSource audioSource;
     
     //Bullet prefab
-    public GameObject Bullet;
+    [SerializeField] private GameObject Bullet = null;
     
     //Transform of Fire Point
-    public Transform firePoint;
+    [SerializeField] private Transform firePoint = null;
     
     //Sound that plays when bullet is fired
-    public AudioClip firingSound;
+    [SerializeField] private AudioClip firingSound = null;
 
     public float horizontal;
     

@@ -9,11 +9,11 @@ using UnityEngine.SceneManagement;
 public class Settings : MonoBehaviour
 {
 
-    public AudioMixer audioMixer;
-    public Slider volumeSlider;
-    public Dropdown qualityDropdown;
-    public Dropdown resolutionDropdown;
-    public Toggle fullscreenToggle;
+    [SerializeField] private AudioMixer audioMixer = null;
+    [SerializeField] private Slider volumeSlider = null;
+    [SerializeField] private Dropdown qualityDropdown = null;
+    [SerializeField] private Dropdown resolutionDropdown = null;
+    [SerializeField] private Toggle fullscreenToggle = null;
 
     private Resolution[] resolutions;
 
