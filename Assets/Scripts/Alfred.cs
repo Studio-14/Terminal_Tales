@@ -36,9 +36,6 @@ public class Alfred : Enemy
 
     private bool isBoss = false;
 
-    //Enemy component
-    private Enemy enemyScript;
-    
     //SpriteRenderer component
     private SpriteRenderer sr;
 
@@ -50,10 +47,9 @@ public class Alfred : Enemy
     void Start()
     {
         currentBullet = Bullet;
-        enemyScript = GetComponent<Enemy>();
         sr = GetComponent<SpriteRenderer>();
 
-        baseHealth = enemyScript.health;
+        baseHealth = health;
     }
     
     // Update is called once per frame
@@ -67,12 +63,12 @@ public class Alfred : Enemy
             shotClock = 0f;
         }
 
-        if (enemyScript.health <= 20)
+        if (health <= 20)
         {
             BossMode();
         }
-
-        if (!enemyScript.canBeKilled)
+        
+        if (!canBeKilled)
         {
             bossCountdown += Time.deltaTime;
 
@@ -103,8 +99,8 @@ public class Alfred : Enemy
     {
         if (canGoBoss)
         {
-            enemyScript.health = 200;
-            enemyScript.canBeKilled = false;
+            health = 200;
+            canBeKilled = false;
             shootingCooldown *= 1.3f;
 
             sr.sprite = BossSprite;
@@ -118,7 +114,7 @@ public class Alfred : Enemy
     //Alfred stops going nuts
     private void NotBossMode()
     {
-        enemyScript.canBeKilled = true;
+        canBeKilled = true;
         shootingCooldown /= 1.3f;
 
         sr.sprite = NormalSprite;

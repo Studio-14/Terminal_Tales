@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4162717301849680632}
   - component: {fileID: 3279233684406085312}
   - component: {fileID: 818511223941665176}
-  - component: {fileID: 444745599567628277}
   - component: {fileID: 4776794802482187377}
   m_Layer: 0
   m_Name: Alfred
@@ -97,6 +96,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abd4a7b6ef1bc443ba3ee975ecd0d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
+  amountOfDamage: 5
+  playerCanTakeDamage: 1
+  canBeKilled: 1
   shootingCooldown: 0.85
   bossCountdown: 0
   Bullet: {fileID: 8310184059443547356, guid: 5f6f19fa2f0be0a498bb2031bb4ea189, type: 3}
@@ -106,22 +109,7 @@ MonoBehaviour:
   BossSprite: {fileID: 21300000, guid: 4c93cacc8fb3b804b973b764b44e0eed, type: 3}
   firePoint1: {fileID: 8712275068363483761}
   firePoint2: {fileID: 7587723496153704829}
---- !u!114 &444745599567628277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3865396003181216259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 102156d2f8af59f46b284928dce54229, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 200
-  amountOfDamage: 0
-  playerCanTakeDamage: 1
-  canBeKilled: 1
+  baseHealth: 0
 --- !u!60 &4776794802482187377
 PolygonCollider2D:
   m_ObjectHideFlags: 0
