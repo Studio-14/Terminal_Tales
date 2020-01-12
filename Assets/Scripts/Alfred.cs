@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.PlayerLoop;
 using Random = System.Random;
+using UnityEngine.SceneManagement;
 
 public class Alfred : Enemy
 {
@@ -13,7 +14,9 @@ public class Alfred : Enemy
 
     [SerializeField] float shootingCooldown = 1f;
 
-    [SerializeField] private float bossCountdown = 0f;
+    private float bossCountdown = 0f;
+
+    private float deathCountdown = 3f; //time in seconds between boss death and ending cutscene
 
     private bool canGoBoss = true;
 
@@ -85,6 +88,17 @@ public class Alfred : Enemy
         if (health <= 0)
         {
             AlfredDeath();
+        }
+
+        if (!isAlive)
+        {
+            deathCountdown -= Time.deltaTime;
+        }
+
+        if (deathCountdown <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            //todo use NextLevel.cs so that if another level is after an Alfred death, playerprefs are changed
         }
     }
     
