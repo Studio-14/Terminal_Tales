@@ -17,6 +17,8 @@ public class Alfred : Enemy
 
     private bool canGoBoss = true;
 
+    private bool isAlive = true;
+
     //Bullet prefab
     [SerializeField] private GameObject Bullet = null;
     //Boss bullet
@@ -57,7 +59,7 @@ public class Alfred : Enemy
     {
         shotClock += Time.deltaTime;
         
-        if (isShooting && shotClock >= shootingCooldown)
+        if (isShooting && shotClock >= shootingCooldown && isAlive)
         {
             Fire();
             shotClock = 0f;
@@ -76,6 +78,11 @@ public class Alfred : Enemy
             {
                 NotBossMode();
             }
+        }
+
+        if (health <= 0)
+        {
+            AlfredDeath();
         }
     }
     
@@ -120,5 +127,11 @@ public class Alfred : Enemy
         sr.sprite = NormalSprite;
         currentBullet = Bullet;
         isBoss = false;
+    }
+    
+    //Kills Alfred
+    private void AlfredDeath()
+    {
+        isAlive = false;
     }
 }
