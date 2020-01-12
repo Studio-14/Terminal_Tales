@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Experimental.PlayerLoop;
 using Random = System.Random;
 
-public class Alfred : MonoBehaviour
+public class Alfred : Enemy
 {
     private float shotClock = 0f;
     
