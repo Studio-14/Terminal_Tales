@@ -95,10 +95,8 @@ public class CanvasInfo : MonoBehaviour
     void ChangeBossBar()
     {
         float percentHealth = (enemyScript.health * 1f) / boss.baseHealth;
-        
-        //Calculate size of bar
-        float newWidth = percentHealth * 790;
 
-        bossbar.sizeDelta = new Vector2(newWidth, 146);
+        //Resize boss bar
+        bossbar.localScale = new Vector3(percentHealth / 2, 0.5f);
     }
 }
