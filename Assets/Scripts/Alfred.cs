@@ -30,6 +30,8 @@ public class Alfred : Enemy
     [SerializeField] private Sprite NormalSprite = null;
     //Boss sprite
     [SerializeField] private Sprite BossSprite = null;
+    //Dead sprite
+    [SerializeField] private Sprite DeadSprite = null;
 
     //Transform of Fire Point
     [SerializeField] Transform firePoint1 = null;
@@ -133,5 +135,7 @@ public class Alfred : Enemy
     private void AlfredDeath()
     {
         isAlive = false;
+
+        sr.sprite = DeadSprite;
     }
 }
