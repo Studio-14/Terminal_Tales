@@ -5513,7 +5513,7 @@ PrefabInstance:
     - target: {fileID: 6265306688044859593, guid: 9e7369a7280e7e04bb65b938a08c38b0,
         type: 3}
       propertyPath: dialogue
-      value: Next level coming right up!
+      value: Let's keep moving.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7369a7280e7e04bb65b938a08c38b0, type: 3}
