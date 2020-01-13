@@ -1,10 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Retry : MonoBehaviour
 {
+    private void Start()
+    {
+        Cursor.visible = true;
+    }
+
     //When the retry button is clicked, go to the last level but with full health and back at the beginning
     public void ButtonClick()
     {
