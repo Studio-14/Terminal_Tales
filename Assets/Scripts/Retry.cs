@@ -15,4 +15,13 @@ public class Retry : MonoBehaviour
         Player.isStarting = true;
         SceneManager.LoadScene(PlayerPrefsManager.getScene());
     }
+    
+    //Goes back to menu and deletes all game progress
+    public void Replay()
+    {
+        InventoryManager.ResetInventory();
+        Player.isStarting = true;
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("0_Title");
+    }
 }
