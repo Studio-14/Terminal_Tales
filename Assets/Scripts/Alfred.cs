@@ -5,22 +5,23 @@ using UnityEngine;
 using UnityEngine.Experimental.PlayerLoop;
 using Random = System.Random;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class Alfred : Enemy
 {
-    private float shotClock = 0f;
-    
-    private bool isShooting = true;
+    private float shotClock = 0f; //measures how long it has been since Alfred last shot a bullet
 
-    [SerializeField] float shootingCooldown = 1f;
+    [FormerlySerializedAs("shootingCooldown")] [SerializeField] float shootingThreshold = 1f; //time that should pass between shots
 
-    private float bossCountdown = 0f;
+    private float bossClock = 0f; //time that has passed since Alfred became a boss
+
+    [SerializeField] private float bossThreshold = 10f; //time that Boss Mode should last
 
     private float deathCountdown = 3f; //time in seconds between boss death and ending cutscene
 
-    private bool canGoBoss = true;
+    private bool canGoBoss = true; //true if Alfred can be a boss
 
-    private bool isAlive = true;
+    private bool isAlive = true; //false if Alfred is dead
 
     //Bullet prefab
     [SerializeField] private GameObject Bullet = null;
@@ -36,82 +37,86 @@ public class Alfred : Enemy
     //Dead sprite
     [SerializeField] private Sprite DeadSprite = null;
 
-    //Transform of Fire Point
+    //Fire points
     [SerializeField] Transform firePoint1 = null;
-
     [SerializeField] Transform firePoint2 = null;
+    
+    private bool isBoss = false; //tracks whether Alfred is currently a boss
+    
+    private SpriteRenderer sr; //sprite renderer
 
-    private bool isBoss = false;
+    private int firePointChoice; //number that will be randomized to choose whether Alfred shoots up or down
 
-    //SpriteRenderer component
-    private SpriteRenderer sr;
-
-    private int number;
-
-    public int baseHealth;
+    public int baseHealth; //stores Alfred's initial health. This is used to calculate how much his health bar is filled in
     
     //Startup
+    //Assigns some variables
     void Start()
     {
         currentBullet = Bullet;
         sr = GetComponent<SpriteRenderer>();
-
         baseHealth = health;
     }
     
     // Update is called once per frame
     void Update()
     {
+        //Increases shotClock
         shotClock += Time.deltaTime;
         
-        if (isShooting && shotClock >= shootingCooldown && isAlive)
+        //Fires if applicable
+        if (shotClock >= shootingThreshold && isAlive)
         {
             Fire();
             shotClock = 0f;
         }
 
+        //Activates Boss Mode if applicable
         if (health <= 20)
         {
             BossMode();
         }
         
+        //Deactivates Boss Mode when necessary
         if (!canBeKilled)
         {
-            bossCountdown += Time.deltaTime;
+            bossClock += Time.deltaTime;
 
-            if (bossCountdown >= 10f)
+            if (bossClock >= bossThreshold)
             {
                 NotBossMode();
             }
         }
 
+        //kills Alfred
         if (health <= 0)
         {
             AlfredDeath();
         }
 
+        //counts time since Alfred died
         if (!isAlive)
         {
             deathCountdown -= Time.deltaTime;
         }
 
+        //moves to cutscene when necessary
         if (deathCountdown <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            //todo use NextLevel.cs so that if another level is after an Alfred death, playerprefs are changed
         }
     }
     
     //Creates a bullet in the scene and makes a firing noise.
     private void Fire()
     {
-        number = UnityEngine.Random.Range(1, 3);
-
-        if (!isBoss && number == 1)
+        firePointChoice = UnityEngine.Random.Range(1, 3);
+        
+        if (!isBoss && firePointChoice == 1) //fires at the top half the time (unless it's the boss battle)
         {
             Instantiate(currentBullet, firePoint1.position, firePoint1.rotation);
         }
-        else
+        else //fires at the bottom half the time (and always during the boss battle)
         {
             Instantiate(currentBullet, firePoint2.position, firePoint2.rotation);
         }
@@ -124,7 +129,7 @@ public class Alfred : Enemy
         {
             health = 200;
             canBeKilled = false;
-            shootingCooldown *= 1.3f;
+            shootingThreshold *= 1.3f;
 
             sr.sprite = BossSprite;
             currentBullet = BossBullet;
@@ -138,7 +143,7 @@ public class Alfred : Enemy
     private void NotBossMode()
     {
         canBeKilled = true;
-        shootingCooldown /= 1.3f;
+        shootingThreshold /= 1.3f;
 
         sr.sprite = NormalSprite;
         currentBullet = Bullet;
