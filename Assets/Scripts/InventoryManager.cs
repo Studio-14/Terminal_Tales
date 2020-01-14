@@ -8,17 +8,17 @@ using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 public class InventoryManager : MonoBehaviour
 {
-    
+    //tracks types of items
     public enum Items
     {
         RedKey,
         GreenKey,
         BlueKey
     }
-
-    private const int NumItems = 3;
     
-    private static bool[] inventory = new bool[3];
+    private const int NumItems = 3; //number of types of items
+    
+    private static bool[] inventory = new bool[3]; //tracks which items the player has
     
     //Translates savedData to inventory variables
     static void DecodeInventory(string savedData)

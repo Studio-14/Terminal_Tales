@@ -6,6 +6,7 @@ using UnityEngine.Serialization;
 
 public class Teleport : MonoBehaviour
 {
+    //location to teleport to
     [SerializeField] float teleportX = 0;
     [SerializeField] float teleportY = 0;
     [SerializeField] float teleportZ = -1;
