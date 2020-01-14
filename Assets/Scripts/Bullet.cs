@@ -7,11 +7,13 @@ public class Bullet : MonoBehaviour
 {
 
     [SerializeField] private float speed = 20f;
-    private Rigidbody2D rb;
+    
     [SerializeField] private int damage = 5;
 
     [SerializeField] private bool usesEnemyDamage = false;
 
+    private Rigidbody2D rb;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,7 @@ public class Bullet : MonoBehaviour
     //If the bullet hits an enemy, take damage on the enemy.
     private void OnTriggerEnter2D(Collider2D other)
     {    
-        //Destroy the bullet when appropriate
+        //Destroy the bullet when it hits most things
         if (!other.gameObject.GetComponent<Checkpoint>() && !other.gameObject.GetComponent<Key>() &&
             !other.gameObject.GetComponent<RedKey>() && !other.gameObject.GetComponent<HealthPack>() &&
             !other.GetComponent<DialogueTrigger>() && !other.gameObject.GetComponent<Bullet>() ||  (other.gameObject.GetComponent<Bullet>() && !usesEnemyDamage)) 
@@ -30,11 +32,13 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
+        //Deals damage to enemies
         if (other.gameObject.GetComponent<Enemy>())
         {
             other.gameObject.GetComponent<Enemy>().takeDamage(damage);
         }
 
+        //damages fragile walls
         if (other.gameObject.GetComponent<FragileWall>())
         {
             other.gameObject.GetComponent<FragileWall>().takeHit();

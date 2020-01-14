@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class EnemyMotion : MonoBehaviour
 {
-    [SerializeField] private int platformSize = 1;
+    [SerializeField] private int platformSize = 1; //size of the platform that the enemy is on
 
     [SerializeField] private float movementSpeed = 2.5f;
 
-    private const float distancePerPlatform = 0.75f; //Depends on the enemy type.
+    private const float distancePerPlatform = 0.75f; //Constant that generally doesn't need to be touched
 
-    private double goalTime;
+    private double goalTime; //time before changing directions
 
-    private float moveTimer;
+    private float moveTimer; //measures time since last direction switch
 
     private Rigidbody2D rb;
 

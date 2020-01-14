@@ -6,19 +6,18 @@ using UnityEngine.Serialization;
 
 public class Enemy : MonoBehaviour
 {
+    public int health = 100; //enemy's health
 
-    //The health of the enemy variable
-    public int health = 100;
+    public int amountOfDamage = 5; //damage that the enemy does
 
-    public int amountOfDamage = 5;
-
-    private float hurtTimer;
-    private bool isHurt = false;
+    private float hurtTimer; //starts enemy blinking
+    
+    private bool isHurt = false; //tracks whether the enemy is hurt
     
     //Boolean that determines if the player should lose health.
     [FormerlySerializedAs("canTakeDamage")] public bool playerCanTakeDamage = true;
 
-    public bool canBeKilled = true;
+    public bool canBeKilled = true; //true if this enemy can be defeated
     
     private SpriteRenderer sr;
 
@@ -27,9 +26,9 @@ public class Enemy : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
     }
     
-    //Checks if the enemy is dead. If so, destroy the game object.
     private void Update()
     {
+        //kills the enemy if applicable
         if (health <= 0)
         {
             DropItem[] di = GetComponents<DropItem>();
@@ -40,6 +39,7 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
 
+        //damage blinking animation
         if (isHurt)
         {
             hurtTimer += Time.deltaTime;

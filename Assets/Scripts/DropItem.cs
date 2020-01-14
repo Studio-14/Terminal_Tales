@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class DropItem : MonoBehaviour
 {
-    [SerializeField] private GameObject dropItem = null;
+    [SerializeField] private GameObject dropItem = null; //the item to be dropped
     
+    //Coordinates for the location of the item dropped
     [SerializeField] private float dropX = 0;
     [SerializeField] private float dropY = 0;
     [SerializeField] private float dropZ = 0;
