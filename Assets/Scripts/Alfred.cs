@@ -34,16 +34,12 @@ public class Alfred : Enemy
     [SerializeField] private Sprite NormalSprite = null;
     //Boss sprite
     [SerializeField] private Sprite BossSprite = null;
-    //Dead sprite
-    [SerializeField] private Sprite DeadSprite = null;
 
     //Fire points
     [SerializeField] Transform firePoint1 = null;
     [SerializeField] Transform firePoint2 = null;
     
     private bool isBoss = false; //tracks whether Alfred is currently a boss
-    
-    private SpriteRenderer sr; //sprite renderer
 
     private int firePointChoice; //number that will be randomized to choose whether Alfred shoots up or down
 
@@ -155,6 +151,6 @@ public class Alfred : Enemy
     {
         isAlive = false;
 
-        sr.sprite = DeadSprite;
+        sr.enabled = false;
     }
 }

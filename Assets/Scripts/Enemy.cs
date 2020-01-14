@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
 
     public bool canBeKilled = true; //true if this enemy can be defeated
     
-    private SpriteRenderer sr;
+    [HideInInspector] public SpriteRenderer sr;
 
     private void Start()
     {
