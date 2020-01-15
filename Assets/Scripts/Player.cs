@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     //Timer for jiggling the player
     private float jiggleTimer;
     
-    //Declares what the dealy to shoot should be
+    //Declares what the delay to shoot should be
     [SerializeField] private float shootingDelay = 0.4f;
 
     //Boolean that determines the injury status.
