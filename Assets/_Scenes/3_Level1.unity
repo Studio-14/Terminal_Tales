@@ -1476,7 +1476,7 @@ PrefabInstance:
     - target: {fileID: 4089214025881233969, guid: 8317224556dbb6747ad1602486ca75bd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4089214025881233969, guid: 8317224556dbb6747ad1602486ca75bd,
         type: 3}
@@ -2112,7 +2112,7 @@ PrefabInstance:
     - target: {fileID: 1395861350705177556, guid: 8e70329c0da4d8b4a8d16d20938fa129,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1395861350705177556, guid: 8e70329c0da4d8b4a8d16d20938fa129,
         type: 3}
@@ -2669,8 +2669,8 @@ PrefabInstance:
     - target: {fileID: 6265306688044859593, guid: 9e7369a7280e7e04bb65b938a08c38b0,
         type: 3}
       propertyPath: dialogue
-      value: Look at those strange lines! Wait... are those red semicolons?! You can't
-        hurt them and if they touch you they will instantly kill you!
+      value: I've seen this before. The diagram above shows which of the upcoming
+        platforms are real and which aren't. Be careful.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7369a7280e7e04bb65b938a08c38b0, type: 3}
@@ -2810,7 +2810,7 @@ PrefabInstance:
     - target: {fileID: 1553946776040436151, guid: 027497e97de700b48941f4e88680824f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1553946776040436151, guid: 027497e97de700b48941f4e88680824f,
         type: 3}
@@ -2948,7 +2948,7 @@ Transform:
   - {fileID: 1878075664}
   - {fileID: 1697242695}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1055113352
 PrefabInstance:
@@ -3085,7 +3085,7 @@ Transform:
   - {fileID: 336895372}
   - {fileID: 1265470667}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1162747416
 GameObject:
@@ -3130,7 +3130,7 @@ Transform:
   - {fileID: 187742942}
   - {fileID: 972813389}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1209768223
 PrefabInstance:
@@ -3837,6 +3837,81 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1378245448}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1418719784
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1450548032256710785, guid: 9e7369a7280e7e04bb65b938a08c38b0,
+        type: 3}
+      propertyPath: m_Name
+      value: Info
+      objectReference: {fileID: 0}
+    - target: {fileID: 2784526252870802194, guid: 9e7369a7280e7e04bb65b938a08c38b0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 60.77918
+      objectReference: {fileID: 0}
+    - target: {fileID: 2784526252870802194, guid: 9e7369a7280e7e04bb65b938a08c38b0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.25803
+      objectReference: {fileID: 0}
+    - target: {fileID: 2784526252870802194, guid: 9e7369a7280e7e04bb65b938a08c38b0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2784526252870802194, guid: 9e7369a7280e7e04bb65b938a08c38b0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2784526252870802194, guid: 9e7369a7280e7e04bb65b938a08c38b0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2784526252870802194, guid: 9e7369a7280e7e04bb65b938a08c38b0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2784526252870802194, guid: 9e7369a7280e7e04bb65b938a08c38b0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2784526252870802194, guid: 9e7369a7280e7e04bb65b938a08c38b0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2784526252870802194, guid: 9e7369a7280e7e04bb65b938a08c38b0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2784526252870802194, guid: 9e7369a7280e7e04bb65b938a08c38b0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2784526252870802194, guid: 9e7369a7280e7e04bb65b938a08c38b0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6265306688044859593, guid: 9e7369a7280e7e04bb65b938a08c38b0,
+        type: 3}
+      propertyPath: dialogue
+      value: Those red semicolons are tough! They'll kill you instantly, and they
+        don't take damage.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e7369a7280e7e04bb65b938a08c38b0, type: 3}
 --- !u!1001 &1441538023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4204,7 +4279,7 @@ PrefabInstance:
     - target: {fileID: 5218291622764808894, guid: b3047770512835447a40ee5c0d4ea6b8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5218291622764808894, guid: b3047770512835447a40ee5c0d4ea6b8,
         type: 3}
