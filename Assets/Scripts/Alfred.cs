@@ -123,7 +123,7 @@ public class Alfred : Enemy
     {
         if (canGoBoss)
         {
-            health = 200;
+            health = baseHealth;
             canBeKilled = false;
             shootingThreshold *= 1.3f;
 
