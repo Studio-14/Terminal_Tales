@@ -1752,7 +1752,8 @@ PrefabInstance:
     - target: {fileID: 6265306688044859593, guid: 9e7369a7280e7e04bb65b938a08c38b0,
         type: 3}
       propertyPath: dialogue
-      value: You will have to blast the upcoming wall to get through.
+      value: You will have to blast the upcoming wall to get through. It'll take a
+        few shots to finally break, though.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7369a7280e7e04bb65b938a08c38b0, type: 3}
