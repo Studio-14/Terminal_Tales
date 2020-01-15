@@ -11,6 +11,10 @@ public class Enemy : MonoBehaviour
     public int amountOfDamage = 5; //damage that the enemy does
 
     private float hurtTimer; //starts enemy blinking
+
+    private float damageTimer = 0f; //time since the enemy dealt damage
+
+    private const float damageThreshold = 1f; //time between damage
     
     private bool isHurt = false; //tracks whether the enemy is hurt
     
@@ -55,6 +59,8 @@ public class Enemy : MonoBehaviour
                 hurtTimer = 0;
             }
         }
+
+        damageTimer += Time.deltaTime; //updates time since damage was dealt
     }
 
     //Take damage function
@@ -70,8 +76,9 @@ public class Enemy : MonoBehaviour
     //If a player enters the trigger, take damage
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player") && playerCanTakeDamage)
+        if (other.gameObject.CompareTag("Player") && playerCanTakeDamage && damageTimer >= damageThreshold)
         {
+            damageTimer = 0f;
             Player.takeDamage(amountOfDamage);
         }
     }
