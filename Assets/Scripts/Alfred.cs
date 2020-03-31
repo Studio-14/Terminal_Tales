@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.PlayerLoop;
 using Random = System.Random;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
